@@ -22,6 +22,35 @@ body::-webkit-scrollbar-thumb
 html{
     scroll-behavior: smooth;
 }
+#heroImg{
+	height: 600px;
+	scale: 1.2;
+}
+.products{
+	width: 1000px;
+}
+.secondproduct{
+	flex-direction: row-reverse;
+	margin-top: 40px;
+}
+
+@media (max-width:600px) {
+	.pill{
+		visibility: hidden;
+		width: 0;
+	}
+	#heroImg{
+		visibility: hidden;
+		height: 0;
+	}
+	.products{
+		width: 350px;
+	}
+	.secondproduct{
+		margin-top: 0;
+		flex-direction: column;
+	}
+}
 
 .highlight .hll { background-color: #515151 }
 .highlight  { background: #2d2d2d; color: #f2f0ec }

@@ -5,21 +5,20 @@ layout: home
 <body>
 
 <section id="home">
-  <main class="mt-32  flex flex-row  max-w-7xl mx-auto items-center justify-center">
-  <div class="">
-    <h2 class="mb-4 w-72 border-1   text-gray-900  px-4 py-2  text-center rounded-full  md:mx-auto text-xs font-semibold tracking-widest uppercase title-font" style="background-color: #f59797ad;width: 500px;border-color: #615858;margin-left:123px"> Use AI to boost productivity of your users and team</h2>
-    <h1 class="font-bold my-5  text-6xl" >We build <span class="text-primary-500" >web & mobile applications</span></h1>
-    <p class="text-md py-4">
+  <main class="md:mt-32 mt-32  flex md:flex-row flex-col max-w-7xl mx-auto md:items-center md:justify-center">
+  <div class="px-4 py-2 md:px-0 md:py-0">
+    <h2 class="pill mb-4 md:w-72 w-64 border-1  mx-4 text-gray-900  px-4 py-2  text-center rounded-full  md:mx-auto text-xs font-semibold tracking-widest uppercase title-font" style="background-color: #f59797ad;width: 500px;border-color: #615858;margin-left:123px"> Use AI to boost productivity of your users and team</h2>
+    <h1 class="font-bold my-5 px-10 text-6xl" >We build <span class="text-primary-500" >web & mobile applications</span></h1>
+    <p class="text-md py-4 ">
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente quia et nihil quis eaque temporibus voluptate, quos in corporis unde.</p>
     <a href="#"
-    class="flex text-center w-full  justify-center  md:w-48 items-center px-6 py-3 font-semibold text-white transition duration-500 ease-in-out transform bg-primary-500 rounded-lg hover:bg-primary-700 focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2">
+    class="flex mt-10 md:mt-5 text-center w-full  justify-center  md:w-48 items-center px-6 py-3 font-semibold text-white transition duration-500 ease-in-out transform bg-primary-500 rounded-lg hover:bg-primary-700 focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2">
       Get Started
       <i class="ml-2 text-lg ph-caret-double-right-bold"></i>
     </a>
-
   </div>
   <div class="">
-    <img src="./assets/img/hero.svg" alt="hero image" style="height: 600px;scale: 1.2;"; class=""/>
+    <img src="./assets/img/hero.svg" alt="hero image"  id="heroImg"/>
   </div>
 </main>
 </section>
@@ -99,19 +98,19 @@ layout: home
 
 
 
-<section class="text-gray-600 body-font " id="products">
+<section class="text-gray-600 body-font  " id="products">
   <div class=" px-5  mx-auto">
     <div class="lg:text-center">
       <h2 class="mb-4 bg-primary-100 text-primary-800 px-4 py-2 rounded-lg md:w-40 md:mx-auto text-sm font-semibold tracking-widest uppercase title-font">Our products</h2>
     </div>
     <h1 class="text-3xl font-medium title-font text-gray-900 mb-12 text-center">Lorem ipsum dolor sit amet.</h1>
 
-    <div class="gap-y-4" style="width: 1000px;margin: auto;">
+    <div class="products" style="margin: auto;">
 
       <!-- first -->
-    <div class="flex flex-row items-center justify-between py-8">
-      <img src="./assets/img/team-1-800x800.jpg" alt="birviewx" class="mx-4 px-4 w-64 h-auto"/>
-      <div class="flex flex-col mx-5 px-5 my-2 w-84">
+    <div class="flex md:flex-row flex-col items-center justify-between py-8">
+      <img src="./assets/img/team-1-800x800.jpg" alt="birviewx" class="mx-4 px-4 w-64 h-auto py-3 md:py-0"/>
+      <div class="flex flex-col mx-5 px-5 my-2 md:w-84">
         <h1 class="text-3xl font-bold my-3">BirdView</h1>
         <p class="text-left mb-3" style="font-size: 15px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi doloremque voluptate quibusdam ex similique architecto sunt mollitia eligendi iure expedita dolore sint ab cupiditate itaque ullam modi totam, ad numquam debitis harum hic quae excepturi? Debitis dolorum inventore deserunt optio?</p>
         <a href="#"
@@ -124,8 +123,8 @@ layout: home
     </div>
 
     <!-- second -->
-    <div class="flex  items-center justify-between" style="flex-direction: row-reverse; margin-top: 40px; ">
-      <img src="./assets/img/team-2-800x800.jpg" alt="birviewx" class="mx-4 px-4 w-64 h-auto"/>
+    <div class="flex items-center justify-between  secondproduct">
+      <img src="./assets/img/team-2-800x800.jpg" alt="birviewx" class="mx-4 px-4 w-64 h-auto py-3 md:py-0"/>
       <div class="flex flex-col mx-5 px-5 my-2 w-84">
         <h1 class="text-3xl font-bold my-3">Sassify</h1>
         <p class="text-left mb-3" style="font-size: 15px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi doloremque voluptate quibusdam ex similique architecto sunt mollitia eligendi iure expedita dolore sint ab cupiditate itaque ullam modi totam, ad numquam debitis harum hic quae excepturi? Debitis dolorum inventore deserunt optio?</p>
@@ -133,9 +132,9 @@ layout: home
     class="flex text-center w-full  justify-center  md:w-48 items-center px-6 py-2 font-semibold text-white transition duration-500 ease-in-out transform bg-primary-500 rounded-lg hover:bg-primary-700 focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2">
       GitHub
       <i class="ml-2 text-lg ph-caret-double-right-bold"></i>
-    </a>
-
+      </a>
       </div>
+
     </div>
     </div>
   </div>
@@ -231,7 +230,7 @@ layout: home
       </h3>
     </div>
 
-    <div class="flex max-w-7xl mx-auto flex-row justify-evenly items-center" style="justify-content: space-evenly;">
+    <div class="flex max-w-7xl mx-auto md:flex-row flex-col  justify-evenly items-center" style="justify-content: space-evenly; gap: 10px 0px;">
       <img src="./assets/img/team-1-800x800.jpg" alt="team-1"/>
       <img src="./assets/img/team-2-800x800.jpg" alt="team-1"/>
       <img src="./assets/img/team-3-800x800.jpg" alt="team-1"/>
