@@ -24,14 +24,17 @@ html{
 }
 #heroImg{
 	height: 600px;
-	scale: 1.2;
+	
 }
 .products{
-	width: 1000px;
+	width: 80rem;
 }
 .secondproduct{
 	flex-direction: row-reverse;
 	margin-top: 40px;
+}
+.herocontent{
+	width: 60rem;
 }
 
 @media (max-width:600px) {
@@ -49,6 +52,9 @@ html{
 	.secondproduct{
 		margin-top: 0;
 		flex-direction: column;
+	}
+	.herocontent{
+		width: auto;
 	}
 }
 
