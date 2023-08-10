@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+
+*{
+	border:2px solid red;
+}
 body::-webkit-scrollbar-track
 {
 	-webkit-box-shadow: inset 0 0 0px rgb(255, 255, 255);
@@ -22,11 +26,15 @@ body::-webkit-scrollbar-thumb
 html{
     scroll-behavior: smooth;
 }
+.hero 
+{
+	margin-top:8rem;
+}
 #heroImg{
 	height: 600px;	
 }
 .products{
-	width: 80rem;
+	width: 75rem;
 }
 .secondproduct{
 	flex-direction: row-reverse;
@@ -54,12 +62,22 @@ html{
 	color:white;
 }
 
+.pill{
+	background-color: #F1FCF4;
+	width: 500px;
+	border-color: #615858;
+	margin-left:123px;
+}
+
 
 @media (max-width:600px) {
-	
+	.hero{
+		margin-top: 2rem;
+	}
 	.pill{
 		visibility: hidden;
 		width: 0;
+		margin-left: 0;
 	}
 	#heroImg{
 		visibility: hidden;
