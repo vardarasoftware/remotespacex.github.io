@@ -1,5 +1,5 @@
 <nav
-class=" bg-gray-800 w-full px-4 py-2  top-0 flex flex-wrap items-center justify-between navbar-expand-lg" style="position: fixed;z-index: 50;"
+class=" bg-gray-800  px-4 py-2  top-0 flex flex-wrap items-center justify-between navbar-expand-lg navbar" style="position: fixed;z-index: 50;"
     >
       <div
         class="container px-4 mx-auto flex flex-wrap items-center justify-between"
@@ -13,16 +13,17 @@ class=" bg-gray-800 w-full px-4 py-2  top-0 flex flex-wrap items-center justify-
             >
             <span class="text-xl font-bold text-secondary-600" >
               <!-- <img class="w-8 h-8" src="/assets/img/cookie.png" alt="Cookie" /> -->
-              Vardara
+              Vardara<sup class="bg-yellow-100 text-primary-500 px-2 rounded-full" style="text-transform: lowercase;">beta</sup>
             </span>
           </a
           ><button
             class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
             type="button"
-            onclick="toggleNavbar('example-collapse-navbar')"
+            onclick=toggleNavbar()
           >
             <i class="text-white fas fa-bars"></i>
           </button>
+    
         </div>
         <div
           class="lg:flex flex-grow items-center bg-white lg:bg-transparent lg:shadow-none hidden"
@@ -119,4 +120,26 @@ class=" bg-gray-800 w-full px-4 py-2  top-0 flex flex-wrap items-center justify-
           </ul>
         </div>
       </div>
+      <div id="menus">
+        <div class="menu-list">
+          <a href="">Home</a>
+          <a href="">Services</a>
+          <a href="">Our Products</a>
+          <a href="">Blogs</a>
+        </div>
+      </div>
     </nav>
+
+    <script>
+      let toggle=false;
+      function toggleNavbar(){
+        const bars = document.getElementById("menus");
+        if(bars.style.display=="block")
+        {
+          bars.style.display = "none"
+        }
+        else{
+          bars.style.display = "block"
+        }
+      }
+    </script>

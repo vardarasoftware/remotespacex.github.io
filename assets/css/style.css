@@ -23,8 +23,7 @@ html{
     scroll-behavior: smooth;
 }
 #heroImg{
-	height: 600px;
-	
+	height: 600px;	
 }
 .products{
 	width: 80rem;
@@ -37,7 +36,27 @@ html{
 	width: 60rem;
 }
 
+#menus{
+	display:none;
+}
+.navbar{
+	max-width: 100%;
+	min-width: 375px;
+	width: 100%;
+}
+.menu-list
+{
+	display: flex;
+	padding: 20px;
+	flex-direction: column;
+	height:fit-content;
+	gap:5px 2px;
+	color:white;
+}
+
+
 @media (max-width:600px) {
+	
 	.pill{
 		visibility: hidden;
 		width: 0;
@@ -55,6 +74,10 @@ html{
 	}
 	.herocontent{
 		width: auto;
+	}
+	.title{
+		margin-left:10px;
+		margin-right:10px;
 	}
 }
 
