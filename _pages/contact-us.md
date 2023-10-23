@@ -3,4 +3,4 @@ layout: page
 title: Contact Us
 ---
 
-Contact Us on abc@example.com
+Contact Us on admin@vardarasoftware.com

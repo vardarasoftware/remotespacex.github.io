@@ -11,6 +11,8 @@ module.exports = {
         secondary: colors.indigo,
         tertiary: colors.slate,
         danger: colors.red,
+        pill: colors.pill,
+        fontmain:"#F43F5E"
       },
       fontFamily: {
         sans: ['Work Sans','Inter var', ...defaultTheme.fontFamily.sans]
