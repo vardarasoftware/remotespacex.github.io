@@ -1,16 +1,32 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}" class="h-full">
+<html lang="{{ page.lang | default: site.lang | default: "en" }}" class="no-js scroll-smooth">
 
 {%- include head.html -%}
 
-<body class='h-full'>
+<body class="flex min-h-screen flex-col bg-white font-sans text-slate-700 antialiased">
+  <script>document.documentElement.classList.remove('no-js');</script>
 
   {%- include nav.html -%}
 
-  {{ content }}
+  <main class="flex-1">
+    {{ content }}
+  </main>
 
   {%- include footer.html -%}
 
+  <script>
+    // Fade-in on scroll for elements marked .reveal
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) { els.forEach(function (el) { el.classList.add('is-visible'); }); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) { entry.target.classList.add('is-visible'); io.unobserve(entry.target); }
+        });
+      }, { rootMargin: '0px 0px -60px 0px' });
+      els.forEach(function (el) { io.observe(el); });
+    })();
+  </script>
 </body>
 
 </html>
