@@ -5,7 +5,7 @@ layout: home
 <div class="container max-w-screen-md py-24 md:py-28 mx-auto px-4 sm:px-6 lg:px-8">
     <h1 class="text-4xl font-black">Blog</h1>
     <p class="content-text text-lg mt-6">
-    You can write your blog intro here
+      Find our latest articles on ruby on rails, react from our devs.
     </p>
   <ul class="mt-12">
     {%- for post in site.posts -%}

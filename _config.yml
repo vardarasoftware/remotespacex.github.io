@@ -1,9 +1,8 @@
-title: RemoteSpaceX
-description: >
-  Ruby on Rails experts & AI automation pioneers helping SMEs scale on AWS.
-  We help businesses embrace AI. We build things.
+title: Vardara Software
+description: > 
+  Premier Ruby on Rails development, AWS cloud deployment, and AI automation company helping businesses build and scale.
 baseurl: "/"
-url: https://vardarasoftware.com # matches CNAME; used for sitemap and canonical URLs
+url: https://vardarasoftware.com
 
 permalink: "/blog/:title/"
 
@@ -13,7 +12,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-minifier
 
-css_dir: "assets/css" # defaults to "css"
+css_dir: "assets/css"
 
 highlighter: rouge
 
@@ -30,7 +29,7 @@ jekyll-minifier:
     harmony: true
 
 soopr:
-  publish_token: "" # sign up at https://www.soopr.co to get your publish token and personalize share and reaction options
+  publish_token: ""
 
 twitter:
   card: summary_large_image
