@@ -1,8 +1,8 @@
-title: Vardara software
-description: > # this means to ignore newlines until "show_excerpts:"
- 
+title: Vardara Software
+description: > 
+  Premier Ruby on Rails development, AWS cloud deployment, and AI automation company helping businesses build and scale.
 baseurl: "/"
-url: https://vardarasoftware.com # change this URL, this is needed for generating right sitemap
+url: https://vardarasoftware.com
 
 permalink: "/blog/:title/"
 
@@ -12,7 +12,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-minifier
 
-css_dir: "assets/css" # defaults to "css"
+css_dir: "assets/css"
 
 highlighter: rouge
 
@@ -29,7 +29,7 @@ jekyll-minifier:
     harmony: true
 
 soopr:
-  publish_token: "" # sign up at https://www.soopr.co to get your publish token and personalize share and reaction options
+  publish_token: ""
 
 twitter:
   card: summary_large_image
