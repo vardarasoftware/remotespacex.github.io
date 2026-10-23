@@ -1,457 +1,172 @@
 ---
-layout: default
+layout: editorial
 title: Vardara Software
-seo_title: Vardara Software — We build web & mobile applications
-description: Vardara Software builds web and mobile applications with battle-tested Ruby on Rails, production-grade AWS and AI automation for startups and SMEs.
-body_class: ""
+seo_title: Vardara Software — Next-generation software development lab
+description: Vardara is a development lab, not an agency. Senior engineers run an AI harness and a software factory across the whole build — spec, code, review, release and the project management around it.
 ---
 
 <!-- ============================== HERO ============================== -->
-<section id="home" class="hero">
-  <div class="hero-grid" aria-hidden="true"></div>
-  <div class="hero-glow hero-glow--a" aria-hidden="true"></div>
-  <div class="hero-glow hero-glow--b" aria-hidden="true"></div>
-  <div class="hero-glow hero-glow--c" aria-hidden="true"></div>
-
-  <div class="mx-auto grid min-h-[calc(100svh-4rem)] max-w-7xl items-center gap-12 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-12 lg:gap-8 lg:px-8">
-    <div class="text-center lg:col-span-7 lg:text-left">
-      <p class="eyebrow-pill">
-        <span class="eyebrow-dot" aria-hidden="true"></span>
-        Crafting digital wonders through engineered excellence
-      </p>
-
-      <h1 class="ink-heading mt-8 font-heading text-[2.6rem] font-bold leading-[1.05] tracking-tight sm:text-6xl xl:text-7xl" aria-label="We build web apps, mobile apps, AI workflows and SaaS products">
-        <span aria-hidden="true">We Build</span><br>
-        <span id="type" class="typewriter text-gradient" aria-hidden="true">Web Apps</span>
-      </h1>
-
-      <p class="ink-lede mx-auto mt-6 max-w-xl text-lg leading-relaxed sm:text-xl lg:mx-0">
-        Battle-tested Ruby on Rails. Production-grade AWS. AI automation that actually works.
-      </p>
-      <p class="ink-body mx-auto mt-4 max-w-xl leading-relaxed lg:mx-0">
-        We design and build high-quality, testable and scalable software for startups and SMEs, and partner with your team to ship products that matter.
-      </p>
-
-      <div class="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center lg:justify-start">
-        <a href="{{ '/contact-us' | relative_url }}" class="link-arrow group inline-flex min-h-[48px] items-center justify-center gap-2 rounded-lg px-6 py-3 font-semibold text-white transition" style="background: linear-gradient(135deg,#4F46E5,#7C3AED); box-shadow: 0 14px 30px rgba(79,70,229,.30), inset 0 1px 0 rgba(255,255,255,.22);">
-          Hire a Squad <span class="arrow" aria-hidden="true">&rarr;</span>
-        </a>
-        <a href="#products" class="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-lg border px-6 py-3 font-semibold transition" style="border-color: var(--line); color: var(--indigo); background: var(--surface);">
-          See Our Work <span aria-hidden="true">&darr;</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- Hero art: floating glass card composition (AC 9) -->
-    <div class="hero-cards-wrap lg:col-span-5" aria-hidden="true">
-      <!-- Conic-gradient orb behind the cards -->
-      <div class="hero-orb"></div>
-
-      <!-- Card 1: Our Services -->
-      <div class="hero-card hero-card--1">
-        <p class="hero-card__label">
-          <svg class="hero-card__icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="2" width="5" height="5" rx="1"/><rect x="9" y="2" width="5" height="5" rx="1"/><rect x="2" y="9" width="5" height="5" rx="1"/><rect x="9" y="9" width="5" height="5" rx="1"/></svg>
-          What we build
-        </p>
-        <ul class="hero-card__chips">
-          <li>Web Apps</li>
-          <li>Mobile Apps</li>
-          <li>AI Workflows</li>
-          <li>SaaS Products</li>
-        </ul>
-      </div>
-
-      <!-- Card 2: Our Stack -->
-      <div class="hero-card hero-card--2">
-        <p class="hero-card__label">
-          <svg class="hero-card__icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 5l6-3 6 3-6 3-6-3Z"/><path d="M2 8l6 3 6-3"/><path d="M2 11l6 3 6-3"/></svg>
-          Our stack
-        </p>
-        <ul class="hero-card__chips hero-card__chips--accent">
-          <li>Ruby on Rails</li>
-          <li>React</li>
-          <li>AWS</li>
-          <li>PostgreSQL</li>
-        </ul>
-      </div>
-
-      <!-- Card 3: How we work -->
-      <div class="hero-card hero-card--3">
-        <p class="hero-card__label">
-          <svg class="hero-card__icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M8 5v3.5l2.5 1.5"/></svg>
-          How we ship
-        </p>
-        <ol class="hero-card__steps">
-          <li><span class="hero-card__step-num">1</span>Discovery &amp; scoping</li>
-          <li><span class="hero-card__step-num">2</span>Build &amp; iterate</li>
-          <li><span class="hero-card__step-num">3</span>Deploy &amp; support</li>
-        </ol>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================== TECH STACK ============================== -->
-<section id="stack" class="relative section-border-t section-wash py-20 sm:py-24">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="reveal mx-auto max-w-2xl text-center">
-      <p class="inline-block rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-widest" style="border-color: rgba(6,182,212,.25); background: rgba(6,182,212,.08); color: #0891b2;">Our tech stack</p>
-      <h2 class="ink-heading mt-5 font-heading text-3xl font-bold tracking-tight sm:text-5xl">Our Future-Ready Stack</h2>
-      <p class="ink-body mt-5 text-lg leading-relaxed">We fell in love with Ruby from our inception and built our stack on Rails. That depth of experience is what we bring to every product.</p>
-    </div>
-
-    <div class="reveal mt-12 text-center">
-      <p class="ink-muted text-xs font-semibold uppercase tracking-widest">Trusted technologies we've used for 5+ years</p>
-      <ul class="mt-4 flex flex-wrap items-center justify-center gap-2 text-sm font-medium">
-        <li class="chip">Ruby on Rails</li>
-        <li class="chip">React.js</li>
-        <li class="chip">React Native</li>
-        <li class="chip">Progressive Web Apps</li>
-        <li class="chip">AWS</li>
-      </ul>
-    </div>
-
-    <div class="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-      <!-- Ruby on Rails -->
-      <article class="spotlight card-tech reveal p-7 transition-all duration-300 hover:-translate-y-1">
-        <div class="grid h-12 w-12 place-items-center rounded-lg bg-rose-500/10 text-rose-500 ring-1 ring-rose-500/20" aria-hidden="true">
-          <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M7 3h10l4 6-9 12L3 9l4-6Z"/><path d="M3 9h18M9 3l3 18M15 3l-3 18"/></svg>
-        </div>
-        <h3 class="ink-heading mt-6 font-heading text-xl font-semibold">Ruby on Rails</h3>
-        <p class="ink-body mt-2 leading-relaxed">Half a decade in and we've never looked back. A time-tested way to build software with a quick turnaround to market.</p>
-      </article>
-
-      <!-- React.js -->
-      <article class="spotlight card-tech reveal p-7 transition-all duration-300 hover:-translate-y-1">
-        <div class="grid h-12 w-12 place-items-center rounded-lg bg-cyan-500/10 text-cyan-600 ring-1 ring-cyan-500/20" aria-hidden="true">
-          <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/></svg>
-        </div>
-        <h3 class="ink-heading mt-6 font-heading text-xl font-semibold">React.js</h3>
-        <p class="ink-body mt-2 leading-relaxed">Our choice for complex, engaging UIs, from data-rich admin dashboards to API-driven tables.</p>
-      </article>
-
-      <!-- React Native -->
-      <article class="spotlight card-tech reveal p-7 transition-all duration-300 hover:-translate-y-1">
-        <div class="grid h-12 w-12 place-items-center rounded-lg bg-sky-500/10 text-sky-600 ring-1 ring-sky-500/20" aria-hidden="true">
-          <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M10.5 18.5h3"/><ellipse cx="12" cy="10" rx="4" ry="1.6"/><ellipse cx="12" cy="10" rx="4" ry="1.6" transform="rotate(60 12 10)"/><ellipse cx="12" cy="10" rx="4" ry="1.6" transform="rotate(120 12 10)"/></svg>
-        </div>
-        <h3 class="ink-heading mt-6 font-heading text-xl font-semibold">React Native</h3>
-        <p class="ink-body mt-2 leading-relaxed">Our go-to for cross-platform native apps. Our React expertise carries straight over to mobile.</p>
-      </article>
-
-      <!-- PWA -->
-      <article class="spotlight card-tech reveal p-7 transition-all duration-300 hover:-translate-y-1">
-        <div class="grid h-12 w-12 place-items-center rounded-lg bg-violet-500/10 text-violet-600 ring-1 ring-violet-500/20" aria-hidden="true">
-          <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 8h18M8 21h8M12 18v3"/><path d="m10 11 2 2 4-4" /></svg>
-        </div>
-        <h3 class="ink-heading mt-6 font-heading text-xl font-semibold">Progressive Web Apps</h3>
-        <p class="ink-body mt-2 leading-relaxed">Apps with a native-like feel from a single codebase. No separate Android and iOS builds to maintain.</p>
-      </article>
-
-      <!-- AWS -->
-      <article class="spotlight card-tech reveal p-7 transition-all duration-300 hover:-translate-y-1">
-        <div class="grid h-12 w-12 place-items-center rounded-lg bg-amber-500/10 text-amber-600 ring-1 ring-amber-500/20" aria-hidden="true">
-          <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a4.5 4.5 0 0 1-.6-8.96A6 6 0 0 1 18 8.5a4.75 4.75 0 0 1-.5 9.5H7Z"/><path d="m9.5 13.5 2.5-2.5 2.5 2.5M12 11v5"/></svg>
-        </div>
-        <h3 class="ink-heading mt-6 font-heading text-xl font-semibold">AWS Cloud</h3>
-        <p class="ink-body mt-2 leading-relaxed">Production-grade cloud deployment: infrastructure, CI/CD and auto-scaling, built to run reliably.</p>
-      </article>
-
-      <!-- AI -->
-      <article class="spotlight card-tech reveal p-7 transition-all duration-300 hover:-translate-y-1">
-        <div class="grid h-12 w-12 place-items-center rounded-lg bg-indigo-500/10 text-indigo-600 ring-1 ring-indigo-500/20" aria-hidden="true">
-          <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3Z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15Z"/></svg>
-        </div>
-        <h3 class="ink-heading mt-6 font-heading text-xl font-semibold">AI &amp; Automation</h3>
-        <p class="ink-body mt-2 leading-relaxed">Workflows and AI agents that plug into your tools and take repetitive work off your team's plate.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============================== PRODUCTS ============================== -->
-<section id="products" class="relative overflow-hidden section-border-t section-surface py-20 sm:py-24">
-  <div class="bg-dots absolute inset-0 -z-0 opacity-40 [mask-image:radial-gradient(ellipse_at_top,#000_20%,transparent_70%)]" aria-hidden="true"></div>
-  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="reveal mx-auto max-w-2xl text-center">
-      <p class="inline-block rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-widest" style="border-color: rgba(79,70,229,.25); background: rgba(79,70,229,.07); color: #4F46E5;">Software we've built</p>
-      <h2 class="ink-heading mt-5 font-heading text-3xl font-bold tracking-tight sm:text-5xl">We love to build software</h2>
-      <p class="ink-body mt-5 text-lg leading-relaxed">Crafting software is an art, and we keep pushing ourselves to perfect it. Here's what we've built for ourselves and for the community.</p>
-    </div>
-
-    <div class="mt-14 grid gap-6 lg:grid-cols-2">
-      <!-- BirdView -->
-      <article class="spotlight lift reveal flex flex-col rounded-xl border transition-all duration-300 hover:-translate-y-1" style="border-color: var(--line); background: var(--surface); box-shadow: var(--card-shadow);">
-        <div class="relative m-2 overflow-hidden rounded-lg border p-6 sm:p-8" style="border-color: var(--line); background: linear-gradient(135deg, rgba(79,70,229,.06), var(--wash), rgba(6,182,212,.05));" aria-hidden="true">
-          <div class="flex items-center gap-3 sm:gap-4">
-            <div class="flex-1 rounded-lg border p-4" style="border-color: var(--line); background: var(--surface);">
-              <div class="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-wider ink-muted">
-                <svg viewBox="0 0 24 24" class="h-3.5 w-3.5" style="color: var(--cyan);" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-                Timesheet
-              </div>
-              <div class="mt-3 space-y-2">
-                <div class="flex items-center gap-2"><span class="h-1.5 w-10 rounded-full" style="background: var(--fill-subtle);"></span><span class="h-1.5 flex-1 rounded-full" style="background: rgba(79,70,229,.5);"></span></div>
-                <div class="flex items-center gap-2"><span class="h-1.5 w-10 rounded-full" style="background: var(--fill-subtle);"></span><span class="h-1.5 w-2/3 rounded-full" style="background: rgba(79,70,229,.35);"></span></div>
-                <div class="flex items-center gap-2"><span class="h-1.5 w-10 rounded-full" style="background: var(--fill-subtle);"></span><span class="h-1.5 w-1/2 rounded-full" style="background: rgba(79,70,229,.25);"></span></div>
-              </div>
-            </div>
-            <svg viewBox="0 0 24 24" class="h-5 w-5 flex-none ink-muted" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            <div class="flex-1 rounded-lg border p-4" style="border-color: var(--line); background: var(--surface);">
-              <div class="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-wider ink-muted">
-                <svg viewBox="0 0 24 24" class="h-3.5 w-3.5" style="color: var(--cyan);" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l3 3v15H6z"/><path d="M9 9h6M9 13h6M9 17h3"/></svg>
-                Invoice
-              </div>
-              <div class="mt-3 space-y-2">
-                <span class="block h-1.5 w-3/4 rounded-full" style="background: var(--fill-subtle);"></span>
-                <span class="block h-1.5 w-1/2 rounded-full" style="background: var(--line);"></span>
-                <span class="ml-auto block h-2 w-1/3 rounded-full" style="background: rgba(6,182,212,.6);"></span>
-              </div>
-            </div>
-          </div>
-          <div class="mt-5 flex flex-wrap items-center gap-2 font-mono text-[11px] ink-muted">
-            <span class="chip text-xs">{ API-first }</span>
-            <span class="chip text-xs">self-hosted</span>
-          </div>
-        </div>
-
-        <div class="flex flex-1 flex-col p-6 sm:p-8">
-          <div class="flex items-center justify-between gap-4">
-            <h3 class="ink-heading font-heading text-2xl font-bold sm:text-3xl">BirdView</h3>
-            <span class="chip text-xs">SaaS</span>
-          </div>
-          <p class="mt-2 font-medium" style="color: var(--indigo);">Timesheet management &amp; invoicing for SMEs</p>
-          <p class="ink-body mt-4 flex-1 leading-relaxed">A SaaS product that lets small businesses manage timesheets and invoicing in one place. Its API-first design means you can integrate it with your other products, and a self-hosted option is available.</p>
-          <ul class="mt-6 flex flex-wrap gap-2 text-xs font-medium">
-            <li class="rounded-md px-2.5 py-1 ring-1" style="background: rgba(6,182,212,.08); color: #0891b2; ring-color: rgba(6,182,212,.2);">SaaS</li>
-            <li class="rounded-md px-2.5 py-1 ring-1" style="background: rgba(6,182,212,.08); color: #0891b2;">Timesheets</li>
-            <li class="rounded-md px-2.5 py-1 ring-1" style="background: rgba(6,182,212,.08); color: #0891b2;">Invoicing</li>
-            <li class="rounded-md px-2.5 py-1 ring-1" style="background: rgba(6,182,212,.08); color: #0891b2;">API-first</li>
-            <li class="rounded-md px-2.5 py-1 ring-1" style="background: rgba(6,182,212,.08); color: #0891b2;">Self-hostable</li>
-          </ul>
-          <a href="https://github.com/remotespacex" target="_blank" rel="noopener" class="group link-arrow mt-8 inline-flex min-h-[44px] items-center gap-2 self-start rounded-lg border px-4 py-2.5 text-sm font-semibold transition" style="border-color: var(--line); color: var(--indigo); background: var(--fill-subtle);">
-            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
-            View on GitHub <span class="arrow" aria-hidden="true">&rarr;</span>
-          </a>
-        </div>
-      </article>
-
-      <!-- Saasify -->
-      <article class="spotlight lift reveal flex flex-col rounded-xl border transition-all duration-300 hover:-translate-y-1" style="border-color: var(--line); background: var(--surface); box-shadow: var(--card-shadow);">
-        <div class="relative m-2 overflow-hidden rounded-lg border p-6 sm:p-8" style="border-color: var(--line); background: linear-gradient(135deg, rgba(244,63,94,.05), var(--wash), rgba(79,70,229,.08));" aria-hidden="true">
-          <div class="rounded-lg border" style="border-color: var(--line); background: var(--surface);">
-            <div class="flex items-center gap-1.5 border-b px-3 py-2" style="border-bottom-color: var(--line);">
-              <span class="h-2 w-2 rounded-full bg-[#ff5f57]"></span>
-              <span class="h-2 w-2 rounded-full bg-[#febc2e]"></span>
-              <span class="h-2 w-2 rounded-full bg-[#28c840]"></span>
-            </div>
-            <div class="space-y-2 px-4 py-4 font-mono text-[12px] leading-5">
-              <p class="ink-muted"># Skip the scaffolding. Build the product.</p>
-              <p class="ink-lede"><span style="color: var(--danger);">class</span> <span style="color: #b45309;">YourProduct</span> &lt; <span style="color: var(--cyan);">Saasify</span></p>
-              <p class="pl-4 ink-muted"># generic SaaS features: pre-built</p>
-              <p style="color: var(--danger);">end</p>
-            </div>
-          </div>
-          <div class="mt-5 flex flex-wrap items-center gap-2 font-mono text-[11px] ink-muted">
-            <span class="ink-muted">deploy &rarr;</span>
-            <span class="chip text-xs">AWS</span>
-            <span class="chip text-xs">Heroku</span>
-            <span class="chip text-xs">DigitalOcean</span>
-          </div>
-        </div>
-
-        <div class="flex flex-1 flex-col p-6 sm:p-8">
-          <div class="flex items-center justify-between gap-4">
-            <h3 class="ink-heading font-heading text-2xl font-bold sm:text-3xl">Saasify</h3>
-            <span class="rounded-full border px-3 py-1 text-xs font-medium" style="border-color: rgba(16,185,129,.3); background: rgba(16,185,129,.08); color: #059669;">Open Source</span>
-          </div>
-          <p class="mt-2 font-medium" style="color: var(--indigo);">A Ruby on Rails boilerplate for SaaS products</p>
-          <p class="ink-body mt-4 flex-1 leading-relaxed">Ships with the generic features most SaaS apps need, pre-built and configured to deploy to AWS, Heroku and DigitalOcean. You focus on your product instead of scaffolding.</p>
-          <ul class="mt-6 flex flex-wrap gap-2 text-xs font-medium">
-            <li class="rounded-md px-2.5 py-1" style="background: rgba(6,182,212,.08); color: #0891b2;">Ruby on Rails</li>
-            <li class="rounded-md px-2.5 py-1" style="background: rgba(6,182,212,.08); color: #0891b2;">Open Source</li>
-            <li class="rounded-md px-2.5 py-1" style="background: rgba(6,182,212,.08); color: #0891b2;">SaaS Boilerplate</li>
-            <li class="rounded-md px-2.5 py-1" style="background: rgba(6,182,212,.08); color: #0891b2;">Deploy anywhere</li>
-          </ul>
-          <a href="https://github.com/remotespacex" target="_blank" rel="noopener" class="group link-arrow mt-8 inline-flex min-h-[44px] items-center gap-2 self-start rounded-lg border px-4 py-2.5 text-sm font-semibold transition" style="border-color: var(--line); color: var(--indigo); background: var(--fill-subtle);">
-            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
-            View on GitHub <span class="arrow" aria-hidden="true">&rarr;</span>
-          </a>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============================== SERVICES ============================== -->
-<section id="services" class="section-border-t section-wash py-20 sm:py-24">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="reveal mx-auto max-w-2xl text-center">
-      <p class="inline-block rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-widest" style="border-color: rgba(79,70,229,.25); background: rgba(79,70,229,.07); color: #4F46E5;">Services</p>
-      <h2 class="ink-heading mt-5 font-heading text-3xl font-bold tracking-tight sm:text-5xl">What We Do For You</h2>
-      <p class="ink-body mt-5 text-lg leading-relaxed">We help businesses embrace AI. We build things, from the app at the core to the cloud it runs on and the automation around it.</p>
-    </div>
-
-    <div class="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      <article class="spotlight card-tech reveal p-8 transition-all duration-300 hover:-translate-y-1">
-        <div class="grid h-14 w-14 place-items-center rounded-xl text-3xl ring-1" style="background: var(--fill-subtle); ring-color: var(--line);" aria-hidden="true">🏗️</div>
-        <h3 class="ink-heading mt-6 font-heading text-xl font-semibold">Custom Software Development</h3>
-        <p class="ink-body mt-2 leading-relaxed">Rails apps, React UIs and React Native mobile, from MVP to production.</p>
-        <ul class="mt-6 space-y-3 text-sm ink-body">
-          <li class="flex gap-3"><svg viewBox="0 0 20 20" class="mt-0.5 h-4 w-4 flex-none" style="color: var(--cyan);" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.58l7.3-7.3a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg>MVPs for startups</li>
-          <li class="flex gap-3"><svg viewBox="0 0 20 20" class="mt-0.5 h-4 w-4 flex-none" style="color: var(--cyan);" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.58l7.3-7.3a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg>Web apps &amp; admin dashboards</li>
-          <li class="flex gap-3"><svg viewBox="0 0 20 20" class="mt-0.5 h-4 w-4 flex-none" style="color: var(--cyan);" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.58l7.3-7.3a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg>Cross-platform mobile apps</li>
-        </ul>
-      </article>
-
-      <article class="spotlight card-tech reveal p-8 transition-all duration-300 hover:-translate-y-1">
-        <div class="grid h-14 w-14 place-items-center rounded-xl text-3xl ring-1" style="background: var(--fill-subtle); ring-color: var(--line);" aria-hidden="true">☁️</div>
-        <h3 class="ink-heading mt-6 font-heading text-xl font-semibold">AWS Cloud Deployment</h3>
-        <p class="ink-body mt-2 leading-relaxed">Infrastructure setup, CI/CD pipelines, auto-scaling and cost optimization.</p>
-        <ul class="mt-6 space-y-3 text-sm ink-body">
-          <li class="flex gap-3"><svg viewBox="0 0 20 20" class="mt-0.5 h-4 w-4 flex-none" style="color: var(--cyan);" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.58l7.3-7.3a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg>Production-grade infrastructure</li>
-          <li class="flex gap-3"><svg viewBox="0 0 20 20" class="mt-0.5 h-4 w-4 flex-none" style="color: var(--cyan);" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.58l7.3-7.3a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg>Automated CI/CD pipelines</li>
-          <li class="flex gap-3"><svg viewBox="0 0 20 20" class="mt-0.5 h-4 w-4 flex-none" style="color: var(--cyan);" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.58l7.3-7.3a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg>Auto-scaling &amp; cost optimization</li>
-        </ul>
-      </article>
-
-      <article class="spotlight card-tech reveal p-8 transition-all duration-300 hover:-translate-y-1 md:col-span-2 lg:col-span-1">
-        <div class="grid h-14 w-14 place-items-center rounded-xl text-3xl ring-1" style="background: var(--fill-subtle); ring-color: var(--line);" aria-hidden="true">🤖</div>
-        <h3 class="ink-heading mt-6 font-heading text-xl font-semibold">AI Automation</h3>
-        <p class="ink-body mt-2 leading-relaxed">Workflow automation, AI agents and integrations that save your team hours every day.</p>
-        <ul class="mt-6 space-y-3 text-sm ink-body">
-          <li class="flex gap-3"><svg viewBox="0 0 20 20" class="mt-0.5 h-4 w-4 flex-none" style="color: var(--cyan);" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.58l7.3-7.3a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg>Workflow automation for SMEs</li>
-          <li class="flex gap-3"><svg viewBox="0 0 20 20" class="mt-0.5 h-4 w-4 flex-none" style="color: var(--cyan);" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.58l7.3-7.3a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg>AI agents for everyday operations</li>
-          <li class="flex gap-3"><svg viewBox="0 0 20 20" class="mt-0.5 h-4 w-4 flex-none" style="color: var(--cyan);" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.58l7.3-7.3a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg>Integrations with the tools you already use</li>
-        </ul>
-      </article>
-    </div>
-
-    <!-- Hire a Squad band -->
-    <div class="reveal mt-10 flex flex-col items-start justify-between gap-6 rounded-xl border p-6 sm:p-8 md:flex-row md:items-center" style="border-color: rgba(79,70,229,.2); background: linear-gradient(135deg, rgba(79,70,229,.06), rgba(6,182,212,.04));">
+<section id="home" aria-labelledby="hero-heading">
+  <div class="ed-wrap">
+    <div class="ed-hero">
       <div>
-        <h3 class="ink-heading font-heading text-xl font-semibold sm:text-2xl">Hire a Squad</h3>
-        <p class="ink-body mt-2 max-w-2xl leading-relaxed">An agile team that embeds with yours, partnering with you to build impactful products rather than just handing over code.</p>
+        <p class="ed-kicker ed-mono">Next-generation software lab — AI harness &amp; software factory</p>
+        <h1 id="hero-heading" class="ed-h1">
+          We build software<br>
+          the way it's <em>about</em><br>
+          <em>to be built.</em>
+        </h1>
       </div>
-      <a href="{{ '/contact-us' | relative_url }}" class="link-arrow group inline-flex min-h-[48px] w-full shrink-0 items-center justify-center gap-2 rounded-lg px-6 py-3 font-semibold text-white transition md:w-auto" style="background: linear-gradient(135deg,#4F46E5,#7C3AED);">
-        Talk to us <span class="arrow" aria-hidden="true">&rarr;</span>
-      </a>
+      <aside class="ed-hero-aside" aria-label="About Vardara">
+        <p>Vardara is a development lab, not an agency. Senior engineers run an AI harness and a software factory across the whole build — spec, code, review, release and the project management around it.</p>
+        <p>What used to take two quarters lands in weeks, and still holds up in production.</p>
+        <div class="ed-side-meta">
+          {{ site.booking.label }}<br>
+          <span>{{ site.booking.value }}</span>
+        </div>
+      </aside>
     </div>
   </div>
-</section>
 
-<!-- ============================== WHY VARDARA ============================== -->
-<section id="why" class="section-border-t section-surface py-20 sm:py-24">
-  <div class="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:items-start lg:gap-16 lg:px-8">
-    <div class="reveal lg:sticky lg:top-28 lg:col-span-5">
-      <p class="inline-block rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-widest" style="border-color: rgba(6,182,212,.25); background: rgba(6,182,212,.08); color: #0891b2;">Why Vardara</p>
-      <h2 class="ink-heading mt-5 font-heading text-3xl font-bold tracking-tight sm:text-5xl">A boutique studio that cares about craft.</h2>
-      <p class="ink-body mt-5 text-lg leading-relaxed">We're deliberately small. You work directly with the engineers who design, build and deploy your software, and we choose quality over quantity every time.</p>
-      <a href="{{ '/about' | relative_url }}" class="link-arrow mt-8 inline-flex min-h-[44px] items-center gap-1 font-semibold" style="color: var(--indigo);">More about us <span class="arrow" aria-hidden="true">&rarr;</span></a>
-    </div>
-
-    <ul class="grid gap-4 sm:grid-cols-2 lg:col-span-7">
-      <li class="card-tech reveal p-6">
-        <span class="text-2xl" aria-hidden="true">💎</span>
-        <h3 class="ink-heading mt-4 font-heading text-lg font-semibold">5+ years with Ruby on Rails</h3>
-        <p class="ink-body mt-2 text-sm leading-relaxed">Rails has been our foundation from the start, and we've never looked back.</p>
-      </li>
-      <li class="card-tech reveal p-6">
-        <span class="text-2xl" aria-hidden="true">🚀</span>
-        <h3 class="ink-heading mt-4 font-heading text-lg font-semibold">AWS production deployments</h3>
-        <p class="ink-body mt-2 text-sm leading-relaxed">We don't stop at "works on my machine". We take software all the way to production on AWS.</p>
-      </li>
-      <li class="card-tech reveal p-6">
-        <span class="text-2xl" aria-hidden="true">🌱</span>
-        <h3 class="ink-heading mt-4 font-heading text-lg font-semibold">Open source contributors</h3>
-        <p class="ink-body mt-2 text-sm leading-relaxed">We share our work, like the Saasify boilerplate, openly on <a href="https://github.com/remotespacex" target="_blank" rel="noopener" class="underline underline-offset-2" style="color: var(--indigo);">GitHub</a>.</p>
-      </li>
-      <li class="card-tech reveal p-6">
-        <span class="text-2xl" aria-hidden="true">🤝</span>
-        <h3 class="ink-heading mt-4 font-heading text-lg font-semibold">Agile squad model</h3>
-        <p class="ink-body mt-2 text-sm leading-relaxed">Embedded with your team, working in your tools and rituals as an extension of your company.</p>
-      </li>
-      <li class="card-tech reveal p-6 sm:col-span-2">
-        <span class="text-2xl" aria-hidden="true">✨</span>
-        <h3 class="ink-heading mt-4 font-heading text-lg font-semibold">AI-first approach</h3>
-        <p class="ink-body mt-2 text-sm leading-relaxed">On every project we look for where AI can save your team time, then build it in, from automated workflows to agents that handle the repetitive work.</p>
-      </li>
-    </ul>
-  </div>
-</section>
-
-<!-- ============================== BLOG ============================== -->
-<section id="blog" class="section-border-t section-wash py-20 sm:py-24">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="reveal flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-      <div class="max-w-2xl">
-        <p class="inline-block rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-widest" style="border-color: rgba(79,70,229,.25); background: rgba(79,70,229,.07); color: #4F46E5;">Our blog</p>
-        <h2 class="ink-heading mt-5 font-heading text-3xl font-bold tracking-tight sm:text-5xl">Insights from Our Devs</h2>
-        <p class="ink-body mt-5 text-lg leading-relaxed">Featured articles on building products with Ruby on Rails and shipping MVPs that work.</p>
+  <!-- Facts strip -->
+  <div class="ed-wrap">
+    <div class="ed-facts" role="list" aria-label="Key facts">
+      {%- for fact in site.data.facts -%}
+      <div class="ed-fact" role="listitem">
+        <b>{{ fact.value }}</b>
+        <small>{{ fact.label }}</small>
       </div>
-      <a href="{{ '/blog' | relative_url }}" class="link-arrow inline-flex min-h-[44px] shrink-0 items-center gap-1 font-semibold" style="color: var(--indigo);">View all posts <span class="arrow" aria-hidden="true">&rarr;</span></a>
-    </div>
-
-    <div class="mt-12 grid gap-6 md:grid-cols-2">
-      <a href="{% post_url 2022-07-03-why-a-startup-choose-ruby-on-rails-to-build-mvp %}" class="spotlight lift reveal group flex flex-col rounded-xl border p-7 transition-all duration-300 hover:-translate-y-1 sm:p-8" style="border-color: var(--line); background: var(--surface); box-shadow: var(--card-shadow);">
-        <div class="flex items-center gap-3 text-xs font-medium ink-muted">
-          <span class="rounded-md px-2 py-0.5 font-semibold ring-1" style="background: rgba(244,63,94,.08); color: #be123c; ring-color: rgba(244,63,94,.2);">Ruby on Rails</span>
-          <time datetime="2022-07-03">Jul 3, 2022</time>
-        </div>
-        <h3 class="ink-heading mt-5 font-heading text-xl font-semibold leading-snug transition sm:text-2xl">Why startups choose Ruby on Rails to build their MVP</h3>
-        <p class="ink-body mt-3 flex-1 leading-relaxed">Ruby on Rails is a battle-tested framework for building proven software. Here are six compelling reasons for a startup founder to choose Rails for their MVP.</p>
-        <span class="mt-6 inline-flex items-center gap-1 text-sm font-semibold" style="color: var(--indigo);">Read article <span class="arrow" aria-hidden="true">&rarr;</span></span>
-      </a>
-
-      <a href="{% post_url 2022-01-13-five-essential-insights-for-your-next-startup-mvp %}" class="spotlight lift reveal group flex flex-col rounded-xl border p-7 transition-all duration-300 hover:-translate-y-1 sm:p-8" style="border-color: var(--line); background: var(--surface); box-shadow: var(--card-shadow);">
-        <div class="flex items-center gap-3 text-xs font-medium ink-muted">
-          <span class="rounded-md px-2 py-0.5 font-semibold ring-1" style="background: rgba(6,182,212,.08); color: #0891b2; ring-color: rgba(6,182,212,.2);">Startups</span>
-          <time datetime="2022-01-13">Jan 13, 2022</time>
-        </div>
-        <h3 class="ink-heading mt-5 font-heading text-xl font-semibold leading-snug transition sm:text-2xl">How to build an effective MVP: 5 essential insights</h3>
-        <p class="ink-body mt-3 flex-1 leading-relaxed">Five practical, actionable insights to absorb before you build your startup's MVP, so it starts out user-centred.</p>
-        <span class="mt-6 inline-flex items-center gap-1 text-sm font-semibold" style="color: var(--indigo);">Read article <span class="arrow" aria-hidden="true">&rarr;</span></span>
-      </a>
+      {%- endfor -%}
     </div>
   </div>
 </section>
 
-{% include cta.html %}
+<!-- ============================== WHAT WE DO ============================== -->
+<section id="what-we-do" aria-labelledby="what-we-do-heading">
+  <div class="ed-wrap">
+    <div class="ed-index">
+      <div class="ed-section-head">
+        <h2 id="what-we-do-heading" class="ed-serif">What we do</h2>
+        <span class="ed-mono" aria-hidden="true">Index — four practices</span>
+      </div>
 
-<script>
-  // Hero typewriter: rotates the word inside #type
-  (function () {
-    var el = document.getElementById('type');
-    if (!el) return;
-    var words = ['Web Apps', 'Mobile Apps', 'AI Workflows', 'SaaS Products'];
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var i = 0;
+      <div class="ed-row hot" role="article" aria-label="Practice 01: Greenfield AI products">
+        <div class="ed-row-num ed-mono" aria-hidden="true">01</div>
+        <h3 class="ed-serif">Greenfield AI products</h3>
+        <p>You bring the thesis. We stand up a real product with the harness — prototype in days, paying users in weeks.</p>
+        <div class="ed-row-arrow" aria-hidden="true">→</div>
+      </div>
 
-    if (reduce) {
-      setInterval(function () { i = (i + 1) % words.length; el.textContent = words[i]; }, 3000);
-      return;
-    }
+      <div class="ed-row" role="article" aria-label="Practice 02: Legacy modernisation">
+        <div class="ed-row-num ed-mono" aria-hidden="true">02</div>
+        <h3 class="ed-serif">Legacy modernisation</h3>
+        <p>We read, map and rebuild systems nobody wants to touch. Incremental, business logic intact, no big-bang rewrite.</p>
+        <div class="ed-row-arrow" aria-hidden="true">→</div>
+      </div>
 
-    var chars = words[0].length, deleting = true, pause = 1800;
-    setTimeout(function tick() {
-      var word = words[i];
-      chars += deleting ? -1 : 1;
-      el.textContent = word.slice(0, chars);
-      var delay = deleting ? 45 : 85;
-      if (!deleting && chars === word.length) { deleting = true; delay = pause; }
-      else if (deleting && chars === 0) { deleting = false; i = (i + 1) % words.length; delay = 300; }
-      setTimeout(tick, delay);
-    }, pause);
-  })();
+      <div class="ed-row" role="article" aria-label="Practice 03: AI automation and workflows">
+        <div class="ed-row-num ed-mono" aria-hidden="true">03</div>
+        <h3 class="ed-serif">AI automation &amp; workflows</h3>
+        <p>n8n, Zapier, Hermes, Paperclip and custom agents wired into how your business actually runs — measured, not demoed.</p>
+        <div class="ed-row-arrow" aria-hidden="true">→</div>
+      </div>
 
-  // Cursor-following spotlight on cards
-  (function () {
-    if (!window.matchMedia('(hover: hover)').matches) return;
-    document.querySelectorAll('.spotlight').forEach(function (card) {
-      card.addEventListener('pointermove', function (e) {
-        var r = card.getBoundingClientRect();
-        card.style.setProperty('--x', (e.clientX - r.left) + 'px');
-        card.style.setProperty('--y', (e.clientY - r.top) + 'px');
-      });
-    });
-  })();
-</script>
+      <div class="ed-row" role="article" aria-label="Practice 04: The software factory">
+        <div class="ed-row-num ed-mono" aria-hidden="true">04</div>
+        <h3 class="ed-serif">The software factory</h3>
+        <p>Our harness as a service: AI across engineering <em>and</em> product management, run by people who own the outcome.</p>
+        <div class="ed-row-arrow" aria-hidden="true">→</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== HOW WE WORK ============================== -->
+<section id="how-we-work" aria-labelledby="how-we-work-heading">
+  <div class="ed-wrap">
+    <div class="ed-harness">
+      <div class="ed-harness-grid">
+        <div class="ed-harness-intro">
+          <h2 id="how-we-work-heading" class="ed-serif">How we<br><em>work.</em></h2>
+          <p>Most shops bolt AI onto the coding step. We run it across the whole loop — and keep a senior engineer accountable at every gate.</p>
+        </div>
+
+        <div class="ed-steps" role="list">
+          <div class="ed-step" role="listitem">
+            <div class="ed-step-num ed-mono">01 — Understand</div>
+            <h4 class="ed-serif">Sit inside the workflow</h4>
+            <p>Before a line is written we map how the work happens today, where the cost sits, and what success would actually look like.</p>
+          </div>
+          <div class="ed-step" role="listitem">
+            <div class="ed-step-num ed-mono">02 — Harness</div>
+            <h4 class="ed-serif">Point the factory at it</h4>
+            <p>Spec, scaffold, code, review, test, deploy — agents do the volume, our engineers set the direction and hold the quality bar.</p>
+          </div>
+          <div class="ed-step" role="listitem">
+            <div class="ed-step-num ed-mono">03 — Ship</div>
+            <h4 class="ed-serif">Working software, weekly</h4>
+            <p>You review running product, not status decks. Scope moves with what the build teaches us.</p>
+          </div>
+          <div class="ed-step" role="listitem">
+            <div class="ed-step-num ed-mono">04 — Operate</div>
+            <h4 class="ed-serif">Measure the impact</h4>
+            <p>Automations keep running, dashboards show hours and cost removed, and your team can take the wheel whenever it wants it.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Process rail -->
+      <div class="ed-loop" aria-label="Our process loop" role="list">
+        <div class="ed-loop-node" role="listitem">Understand</div>
+        <div class="ed-loop-sep" aria-hidden="true"></div>
+        <div class="ed-loop-node" role="listitem">Spec</div>
+        <div class="ed-loop-sep" aria-hidden="true"></div>
+        <div class="ed-loop-node" role="listitem">Build</div>
+        <div class="ed-loop-sep" aria-hidden="true"></div>
+        <div class="ed-loop-node" role="listitem">Review</div>
+        <div class="ed-loop-sep" aria-hidden="true"></div>
+        <div class="ed-loop-node" role="listitem">Ship</div>
+        <div class="ed-loop-sep" aria-hidden="true"></div>
+        <div class="ed-loop-node dim" role="listitem">Operate ↻</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== STACK ============================== -->
+<section id="stack" aria-labelledby="stack-heading">
+  <div class="ed-wrap">
+    <div class="ed-stack">
+      <p id="stack-heading" class="ed-stack-head ed-mono">The harness — tools we run every day</p>
+      <div class="ed-chips" role="list" aria-label="Technology stack">
+        <span class="ed-chip acc" role="listitem">Claude</span>
+        <span class="ed-chip acc" role="listitem">Paperclip</span>
+        <span class="ed-chip acc" role="listitem">Hermes</span>
+        <span class="ed-chip" role="listitem">n8n</span>
+        <span class="ed-chip" role="listitem">Zapier</span>
+        <span class="ed-chip" role="listitem">MCP</span>
+        <span class="ed-chip" role="listitem">AWS</span>
+        <span class="ed-chip" role="listitem">React / Next</span>
+        <span class="ed-chip" role="listitem">Rails</span>
+        <span class="ed-chip" role="listitem">Python</span>
+        <span class="ed-chip" role="listitem">Postgres</span>
+        <span class="ed-chip" role="listitem">Terraform</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CLOSE ============================== -->
+<section id="contact" aria-labelledby="close-heading">
+  <div class="ed-wrap">
+    <div class="ed-close">
+      <div>
+        <h2 id="close-heading" class="ed-serif">Transform how<br>your business <em>builds.</em></h2>
+      </div>
+      <aside>
+        <p>Startups, SMEs and enterprise teams — one conversation to see whether the lab fits what you're trying to change.</p>
+        <a class="ed-big-cta" href="{{ '/contact-us' | relative_url }}">Book a working session ↗</a>
+      </aside>
+    </div>
+  </div>
+</section>
