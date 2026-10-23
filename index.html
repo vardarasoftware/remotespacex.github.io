@@ -42,9 +42,51 @@ body_class: ""
       </div>
     </div>
 
-    <div class="relative mx-auto w-full max-w-md lg:col-span-5 lg:max-w-none">
-      <div class="absolute inset-8 -z-10 rounded-full blur-3xl" aria-hidden="true" style="background: rgba(79,70,229,.15);"></div>
-      <img src="{{ '/assets/img/hero.svg' | relative_url }}" alt="A team of developers collaborating at their desks" width="533" height="495" class="float-slow mx-auto w-full max-w-[30rem]" fetchpriority="high">
+    <!-- Hero art: floating glass card composition (AC 9) -->
+    <div class="hero-cards-wrap lg:col-span-5" aria-hidden="true">
+      <!-- Conic-gradient orb behind the cards -->
+      <div class="hero-orb"></div>
+
+      <!-- Card 1: Our Services -->
+      <div class="hero-card hero-card--1">
+        <p class="hero-card__label">
+          <svg class="hero-card__icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="2" width="5" height="5" rx="1"/><rect x="9" y="2" width="5" height="5" rx="1"/><rect x="2" y="9" width="5" height="5" rx="1"/><rect x="9" y="9" width="5" height="5" rx="1"/></svg>
+          What we build
+        </p>
+        <ul class="hero-card__chips">
+          <li>Web Apps</li>
+          <li>Mobile Apps</li>
+          <li>AI Workflows</li>
+          <li>SaaS Products</li>
+        </ul>
+      </div>
+
+      <!-- Card 2: Our Stack -->
+      <div class="hero-card hero-card--2">
+        <p class="hero-card__label">
+          <svg class="hero-card__icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 5l6-3 6 3-6 3-6-3Z"/><path d="M2 8l6 3 6-3"/><path d="M2 11l6 3 6-3"/></svg>
+          Our stack
+        </p>
+        <ul class="hero-card__chips hero-card__chips--accent">
+          <li>Ruby on Rails</li>
+          <li>React</li>
+          <li>AWS</li>
+          <li>PostgreSQL</li>
+        </ul>
+      </div>
+
+      <!-- Card 3: How we work -->
+      <div class="hero-card hero-card--3">
+        <p class="hero-card__label">
+          <svg class="hero-card__icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M8 5v3.5l2.5 1.5"/></svg>
+          How we ship
+        </p>
+        <ol class="hero-card__steps">
+          <li><span class="hero-card__step-num">1</span>Discovery &amp; scoping</li>
+          <li><span class="hero-card__step-num">2</span>Build &amp; iterate</li>
+          <li><span class="hero-card__step-num">3</span>Deploy &amp; support</li>
+        </ol>
+      </div>
     </div>
   </div>
 </section>
