@@ -653,7 +653,7 @@ html.dark .ed-theme-toggle .icon-moon { display: block; }
   margin-bottom: 10px;
 }
 
-.ed-step h4 {
+.ed-step h3 {
   font-family: 'Instrument Serif', Georgia, serif;
   font-weight: 400;
   font-size: 23px;
