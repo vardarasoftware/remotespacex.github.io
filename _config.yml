@@ -4,6 +4,15 @@ description: >
 baseurl: "/"
 url: https://vardarasoftware.com
 
+# Wordmark — flip wordmark_accent to "Lab" in one edit when the rename is approved
+wordmark_lead: "Vardara"
+wordmark_accent: "Software"
+
+# Booking status — single config value, edit here when availability changes
+booking:
+  label: "Currently booking"
+  value: "Q1 2027 — 2 squads open"
+
 permalink: "/blog/:title/"
 
 plugins:

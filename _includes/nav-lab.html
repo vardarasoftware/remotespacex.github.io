@@ -1,0 +1,100 @@
+{%- assign current = page.url | remove: '.html' -%}
+<nav class="ed-nav" aria-label="Main">
+  <div class="ed-wrap ed-nav-inner">
+
+    <!-- Wordmark -->
+    <a href="{{ '/' | relative_url }}" class="ed-mark" aria-label="{{ site.wordmark_lead }} {{ site.wordmark_accent }} — home">
+      {{ site.wordmark_lead }} <em>{{ site.wordmark_accent }}</em>
+    </a>
+
+    <!-- Desktop links -->
+    <ul class="ed-nav-links" role="list">
+      <li><a href="{{ '/#what-we-do' | relative_url }}"{% if current == '/' %} aria-current="page"{% endif %}>Practice</a></li>
+      <li><a href="{{ '/#how-we-work' | relative_url }}">Harness</a></li>
+      <li><a href="{{ '/blog' | relative_url }}"{% if current contains '/blog' %} aria-current="page"{% endif %}>Writing</a></li>
+    </ul>
+
+    <!-- Right cluster: theme toggle + CTA + mobile menu btn -->
+    <div class="ed-nav-right">
+      <button type="button" class="ed-theme-toggle" id="ed-theme-toggle" aria-label="Switch to dark mode">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+        </svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/>
+        </svg>
+      </button>
+
+      <a href="{{ '/contact-us' | relative_url }}" class="ed-nav-cta">Start a project ↗</a>
+
+      <button type="button" class="ed-menu-btn" id="ed-menu-btn"
+              aria-controls="ed-mobile-menu" aria-expanded="false" aria-label="Open menu">
+        Menu
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu panel -->
+  <div id="ed-mobile-menu" class="ed-mobile-menu ed-wrap" hidden aria-label="Mobile navigation">
+    <ul role="list">
+      <li><a href="{{ '/#what-we-do' | relative_url }}">Practice</a></li>
+      <li><a href="{{ '/#how-we-work' | relative_url }}">Harness</a></li>
+      <li><a href="{{ '/blog' | relative_url }}">Writing</a></li>
+      <li><a href="{{ '/about' | relative_url }}">About</a></li>
+    </ul>
+    <a href="{{ '/contact-us' | relative_url }}" class="ed-mobile-cta">Start a project ↗</a>
+  </div>
+</nav>
+
+<script>
+  (function () {
+    var btn = document.getElementById('ed-menu-btn');
+    var menu = document.getElementById('ed-mobile-menu');
+    var themeBtn = document.getElementById('ed-theme-toggle');
+
+    // Mobile menu
+    function setOpen(open) {
+      menu.hidden = !open;
+      btn.setAttribute('aria-expanded', String(open));
+      btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      btn.textContent = open ? 'Close' : 'Menu';
+    }
+    btn.addEventListener('click', function () { setOpen(menu.hidden); });
+    menu.addEventListener('click', function (e) { if (e.target.closest('a')) setOpen(false); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !menu.hidden) { setOpen(false); btn.focus(); }
+    });
+    window.matchMedia('(min-width: 861px)').addEventListener('change', function (e) {
+      if (e.matches) setOpen(false);
+    });
+
+    // Theme toggle
+    function applyTheme() {
+      var isDark = document.documentElement.classList.contains('dark');
+      themeBtn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      var tc = document.getElementById('meta-theme-color');
+      if (tc) tc.setAttribute('content', isDark ? '#121212' : '#FAF9F6');
+    }
+    applyTheme();
+    themeBtn.addEventListener('click', function () {
+      var isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('vardara-theme', isDark ? 'dark' : 'light');
+      applyTheme();
+    });
+
+    // Smooth-scroll same-page anchors
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest('a[href*="#"]');
+      if (!link || link.origin !== location.origin) return;
+      if (link.pathname !== location.pathname && !(link.pathname === '/' && location.pathname === '/')) return;
+      var hash = link.hash;
+      if (!hash) return;
+      var target = document.getElementById(decodeURIComponent(hash.slice(1)));
+      if (!target) return;
+      e.preventDefault();
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+      history.pushState(null, '', hash);
+    });
+  })();
+</script>

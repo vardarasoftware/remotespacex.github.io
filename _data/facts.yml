@@ -1,0 +1,8 @@
+- value: "Senior"
+  label: "Engineers on every build"
+- value: "Weekly"
+  label: "Working software, not decks"
+- value: "9 yrs"
+  label: "Production engineering"
+- value: "100%"
+  label: "Human-reviewed, tested"
