@@ -1,0 +1,482 @@
+---
+layout: editorial
+title: Start a project
+seo_title: "Start a project — Vardara Software"
+description: "Tell us what you're building. Five questions, about ninety seconds. No discovery-call funnel — you tell us the shape of the problem, we come back in writing."
+permalink: /contact-us
+---
+
+<!-- ===================== HERO ===================== -->
+<section class="cf-hero" aria-labelledby="cf-heading">
+  <div class="ed-wrap">
+    <div class="cf-hero-grid">
+      <div>
+        <p class="cf-kicker ed-mono">Start a project — tell us what you're building</p>
+        <h1 id="cf-heading" class="cf-h1">Let's scope it in<br><em>one conversation.</em></h1>
+      </div>
+      <aside class="cf-hero-aside">
+        <p>Five questions, about ninety seconds. No discovery-call funnel, no drip sequence — you tell us the shape of the problem and we come back in writing.</p>
+        <p>If we're not the right lab for it, we'll say so and point you somewhere better.</p>
+        <div class="cf-side-meta ed-mono">
+          {{ site.booking.label }}<br><span>{{ site.booking.value }}</span>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FORM + RAIL ===================== -->
+<div class="ed-wrap">
+  <div class="cf-main">
+
+    <!-- ---------- FORM COLUMN ---------- -->
+    <div class="cf-form-col">
+
+      <div class="cf-form-head">
+        <h2 class="ed-serif">The brief</h2>
+        <span class="cf-step-count ed-mono" id="cf-count" aria-hidden="true">Step 01 / 03</span>
+      </div>
+      <div class="cf-progress" role="progressbar" aria-valuemin="1" aria-valuemax="3" aria-valuenow="1" aria-label="Form progress">
+        <i id="cf-bar"></i>
+      </div>
+
+      <!--
+        SUBMISSION ENDPOINT — currently in demo mode (validates client-side, nothing transmitted).
+        To go live: set site.contact.endpoint in _config.yml to your POST URL.
+        Supported destinations: Formspree, n8n webhook, a new Zoho project-enquiry form.
+        Do NOT reuse webform922561000000459009 — that routes to the recruiting pipeline.
+      -->
+      <form id="cf-form" method="POST"{% if site.contact.endpoint != "" %} action="{{ site.contact.endpoint | escape }}"{% endif %} novalidate>
+
+        <!-- Honeypot — bots fill this; humans don't see it -->
+        <label class="cf-hp" aria-hidden="true">
+          Do not fill this in <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" value="">
+        </label>
+        <!-- Timing token: JS records page-load timestamp; submit checks elapsed time -->
+        <input type="hidden" name="_t" id="cf-timestamp" value="0">
+
+        <!-- ===== STEP 1 ===== -->
+        <section class="cf-step is-active" data-step="1" aria-label="Step 1 of 3">
+          <h3 class="cf-q" id="cf-q1" tabindex="-1">What are you building?</h3>
+          <p class="cf-q-sub">Pick the closest one. We'll get to the detail in a second.</p>
+          <div class="cf-choices" role="group" aria-labelledby="cf-q1">
+
+            <label class="cf-choice" for="cf-type-1">
+              <input type="radio" name="cf_type" id="cf-type-1" value="Greenfield AI product" class="cf-sr-only">
+              <span class="cf-choice-num" aria-hidden="true">01</span>
+              <span>
+                <strong class="cf-choice-title">Greenfield AI product</strong>
+                <p class="cf-choice-desc">A thesis, a wedge, maybe a deck. Nothing built yet.</p>
+              </span>
+              <span class="cf-choice-arrow" aria-hidden="true">→</span>
+            </label>
+
+            <label class="cf-choice" for="cf-type-2">
+              <input type="radio" name="cf_type" id="cf-type-2" value="Legacy modernisation" class="cf-sr-only">
+              <span class="cf-choice-num" aria-hidden="true">02</span>
+              <span>
+                <strong class="cf-choice-title">Legacy modernisation</strong>
+                <p class="cf-choice-desc">Something that works, that nobody wants to touch.</p>
+              </span>
+              <span class="cf-choice-arrow" aria-hidden="true">→</span>
+            </label>
+
+            <label class="cf-choice" for="cf-type-3">
+              <input type="radio" name="cf_type" id="cf-type-3" value="AI automation &amp; workflows" class="cf-sr-only">
+              <span class="cf-choice-num" aria-hidden="true">03</span>
+              <span>
+                <strong class="cf-choice-title">AI automation &amp; workflows</strong>
+                <p class="cf-choice-desc">Hours disappearing into manual process you want back.</p>
+              </span>
+              <span class="cf-choice-arrow" aria-hidden="true">→</span>
+            </label>
+
+            <label class="cf-choice" for="cf-type-4">
+              <input type="radio" name="cf_type" id="cf-type-4" value="The software factory" class="cf-sr-only">
+              <span class="cf-choice-num" aria-hidden="true">04</span>
+              <span>
+                <strong class="cf-choice-title">The software factory</strong>
+                <p class="cf-choice-desc">You want the harness pointed at your own roadmap.</p>
+              </span>
+              <span class="cf-choice-arrow" aria-hidden="true">→</span>
+            </label>
+
+            <label class="cf-choice" for="cf-type-5">
+              <input type="radio" name="cf_type" id="cf-type-5" value="Not sure yet" class="cf-sr-only">
+              <span class="cf-choice-num" aria-hidden="true">05</span>
+              <span>
+                <strong class="cf-choice-title">Not sure yet</strong>
+                <p class="cf-choice-desc">That's a legitimate answer. We'll work it out together.</p>
+              </span>
+              <span class="cf-choice-arrow" aria-hidden="true">→</span>
+            </label>
+
+          </div>
+        </section>
+
+        <!-- ===== STEP 2 ===== -->
+        <section class="cf-step" data-step="2" aria-label="Step 2 of 3">
+          <h3 class="cf-q" id="cf-q2" tabindex="-1">Where is it today?</h3>
+          <p class="cf-q-sub">Rough is fine. None of this is binding.</p>
+
+          <div class="cf-field">
+            <span class="cf-label" id="cf-lbl-stage">Stage</span>
+            <div class="cf-chips" role="group" aria-labelledby="cf-lbl-stage" data-group="stage">
+              <label class="cf-chip"><input type="radio" name="cf_stage" value="Idea" class="cf-sr-only"> Idea</label>
+              <label class="cf-chip"><input type="radio" name="cf_stage" value="Prototype" class="cf-sr-only"> Prototype</label>
+              <label class="cf-chip"><input type="radio" name="cf_stage" value="In production" class="cf-sr-only"> In production</label>
+              <label class="cf-chip"><input type="radio" name="cf_stage" value="Needs rescuing" class="cf-sr-only"> Needs rescuing</label>
+            </div>
+          </div>
+
+          <div class="cf-field">
+            <span class="cf-label" id="cf-lbl-timeline">Timeline</span>
+            <div class="cf-chips" role="group" aria-labelledby="cf-lbl-timeline" data-group="timeline">
+              <label class="cf-chip"><input type="radio" name="cf_timeline" value="Yesterday" class="cf-sr-only"> Yesterday</label>
+              <label class="cf-chip"><input type="radio" name="cf_timeline" value="Within a month" class="cf-sr-only"> Within a month</label>
+              <label class="cf-chip"><input type="radio" name="cf_timeline" value="This quarter" class="cf-sr-only"> This quarter</label>
+              <label class="cf-chip"><input type="radio" name="cf_timeline" value="Just exploring" class="cf-sr-only"> Just exploring</label>
+            </div>
+          </div>
+
+          <div class="cf-field">
+            <span class="cf-label" id="cf-lbl-budget">Budget band</span>
+            <div class="cf-chips" role="group" aria-labelledby="cf-lbl-budget" data-group="budget">
+              <label class="cf-chip"><input type="radio" name="cf_budget" value="Under $10k" class="cf-sr-only"> Under $10k</label>
+              <label class="cf-chip"><input type="radio" name="cf_budget" value="$10–25k" class="cf-sr-only"> $10–25k</label>
+              <label class="cf-chip"><input type="radio" name="cf_budget" value="$25–75k" class="cf-sr-only"> $25–75k</label>
+              <label class="cf-chip"><input type="radio" name="cf_budget" value="$75k+" class="cf-sr-only"> $75k+</label>
+              <label class="cf-chip"><input type="radio" name="cf_budget" value="Tell me" class="cf-sr-only"> Tell me</label>
+            </div>
+          </div>
+
+          <div class="cf-field">
+            <label class="cf-label" for="cf-detail">In your own words — what needs to be true in 90 days?</label>
+            <textarea class="cf-textarea" id="cf-detail" name="cf_detail" maxlength="600" rows="4"
+              placeholder="e.g. Our ops team spends 20 hours a week copying data between three systems. I want that gone, and I want to see it working before I pay for all of it."></textarea>
+            <div class="cf-count ed-mono" id="cf-chars" aria-live="polite" aria-atomic="true">0 / 600</div>
+          </div>
+        </section>
+
+        <!-- ===== STEP 3 ===== -->
+        <section class="cf-step" data-step="3" aria-label="Step 3 of 3">
+          <h3 class="cf-q" id="cf-q3" tabindex="-1">Who should we reply to?</h3>
+          <p class="cf-q-sub">A person, not a form. You'll hear back from whoever would run the build.</p>
+
+          <div class="cf-two">
+            <div class="cf-field" id="cf-field-name">
+              <label class="cf-label" for="cf-name">Name</label>
+              <input class="cf-input" id="cf-name" name="cf_name" type="text"
+                autocomplete="name" placeholder="Jordan Mehta"
+                aria-describedby="cf-err-name">
+              <span class="cf-error" id="cf-err-name">Name is required.</span>
+            </div>
+            <div class="cf-field" id="cf-field-email">
+              <label class="cf-label" for="cf-email">Work email</label>
+              <input class="cf-input" id="cf-email" name="cf_email" type="email"
+                autocomplete="email" placeholder="jordan@company.com"
+                aria-describedby="cf-err-email">
+              <span class="cf-error" id="cf-err-email">A valid email address is required.</span>
+            </div>
+          </div>
+          <div class="cf-two">
+            <div class="cf-field">
+              <label class="cf-label" for="cf-co">Company</label>
+              <input class="cf-input" id="cf-co" name="cf_company" type="text"
+                autocomplete="organization" placeholder="Northwind Logistics">
+            </div>
+            <div class="cf-field">
+              <label class="cf-label" for="cf-link">Website or deck <em style="font-style:italic;font-weight:400;">(optional)</em></label>
+              <input class="cf-input" id="cf-link" name="cf_url" type="url"
+                placeholder="northwind.com">
+            </div>
+          </div>
+
+          <!-- Mono echo of step 1–2 answers; updated when step 3 is shown -->
+          <div class="cf-echo ed-mono" id="cf-echo" aria-live="polite"></div>
+        </section>
+
+        <!-- JS navigation — hidden without JS -->
+        <div class="cf-actions" id="cf-actions">
+          <button type="button" class="cf-back" id="cf-back" hidden>← Back</button>
+          <button type="button" class="cf-next" id="cf-next">Continue →</button>
+        </div>
+        <p class="cf-note" id="cf-note">We read every one of these. No autoresponder, no CRM drip.</p>
+
+      </form>
+
+      <!-- No-JS submit (shown without JS, hidden when JS loads) -->
+      <div class="cf-noscript-submit">
+        <button type="submit" form="cf-form" class="cf-next">Send the brief →</button>
+        <p class="cf-note" style="margin-top:12px">We read every one of these. No autoresponder, no CRM drip.</p>
+      </div>
+
+      <!-- Success state: JS populates and displays this after submission -->
+      <div class="cf-done" id="cf-done" aria-live="polite" tabindex="-1"></div>
+
+    </div><!-- /cf-form-col -->
+
+    <!-- ---------- RIGHT RAIL ---------- -->
+    <aside class="cf-rail-col" aria-labelledby="cf-rail-head">
+      <div class="cf-rail-sticky">
+        <h2 class="cf-rail-head ed-mono" id="cf-rail-head">What happens after you hit send</h2>
+
+        <div class="cf-next-step">
+          <span aria-hidden="true">01</span>
+          <div>
+            <h3>A person reads it</h3>
+            <p>Not a bot, not an SDR. Whoever would actually run the build.</p>
+            <small>{{ site.contact.response_times.initial_read }}</small>
+          </div>
+        </div>
+        <div class="cf-next-step">
+          <span aria-hidden="true">02</span>
+          <div>
+            <h3>A 30-minute call</h3>
+            <p>Your questions and ours. No slides, no discovery theatre.</p>
+            <small>{{ site.contact.response_times.call_schedule }}</small>
+          </div>
+        </div>
+        <div class="cf-next-step">
+          <span aria-hidden="true">03</span>
+          <div>
+            <h3>A shaping note, in writing</h3>
+            <p>Scope, approach, the risks we can see, and a price band. Yours to keep whether or not you hire us.</p>
+            <small>{{ site.contact.response_times.shaping_note }}</small>
+          </div>
+        </div>
+        <div class="cf-next-step">
+          <span aria-hidden="true">04</span>
+          <div>
+            <h3>Week one: software</h3>
+            <p>If we start, you get working software in the first week — not a kickoff deck.</p>
+            <small>{{ site.contact.response_times.weekly_cadence }}</small>
+          </div>
+        </div>
+
+        <div class="cf-rail-foot">
+          <p>Rather skip the form? Write two lines to
+            <a href="mailto:admin@vardarasoftware.com">admin@vardarasoftware.com</a>
+            — it reaches the same people.</p>
+        </div>
+      </div>
+    </aside>
+
+  </div><!-- /cf-main -->
+</div><!-- /ed-wrap -->
+
+<!-- ===================== PROCESS ===================== -->
+<section class="cf-process" aria-labelledby="cf-process-h">
+  <div class="ed-wrap">
+    <div class="cf-process-head">
+      <h2 id="cf-process-h" class="ed-serif">The process, in a nutshell</h2>
+      <span class="ed-mono" aria-hidden="true">Understand — Ship — Operate ↻</span>
+    </div>
+    <div class="cf-proc-rail">
+      <div class="cf-proc-item"><b>01</b><h3>Understand</h3><p>We sit inside your workflow before a line is written.</p></div>
+      <div class="cf-proc-item"><b>02</b><h3>Spec</h3><p>A spec the harness can execute and you can actually read.</p></div>
+      <div class="cf-proc-item"><b>03</b><h3>Build</h3><p>Agents do volume. Senior engineers hold the quality bar.</p></div>
+      <div class="cf-proc-item"><b>04</b><h3>Review</h3><p>Every change human-reviewed and tested before it moves.</p></div>
+      <div class="cf-proc-item"><b>05</b><h3>Ship</h3><p>Working software weekly. Status decks are not a deliverable.</p></div>
+      <div class="cf-proc-item"><b>06</b><h3>Operate</h3><p>We measure the hours and the cost actually removed.</p></div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  // Record load timestamp for spam timing check (3-second minimum)
+  document.getElementById('cf-timestamp').value = Date.now();
+
+  var step = 1;
+  var form  = document.getElementById('cf-form');
+  var steps = [].slice.call(document.querySelectorAll('.cf-step'));
+  var bar   = document.getElementById('cf-bar');
+  var countEl = document.getElementById('cf-count');
+  var back  = document.getElementById('cf-back');
+  var next  = document.getElementById('cf-next');
+  var echo  = document.getElementById('cf-echo');
+  var note  = document.getElementById('cf-note');
+  var done  = document.getElementById('cf-done');
+  // Endpoint injected from Jekyll config — empty string = demo mode
+  var endpoint = '{{ site.contact.endpoint | escape }}';
+
+  // --- Helpers ---
+  function getRadioVal(name) {
+    var el = document.querySelector('input[name="' + name + '"]:checked');
+    return el ? el.value : '';
+  }
+  function escHtml(s) {
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+  function summary() {
+    var rows = [
+      ['Type',     getRadioVal('cf_type')],
+      ['Stage',    getRadioVal('cf_stage')],
+      ['Timeline', getRadioVal('cf_timeline')],
+      ['Budget',   getRadioVal('cf_budget')]
+    ];
+    var lines = rows
+      .filter(function (r) { return r[1]; })
+      .map(function (r) { return r[0] + ' &nbsp;·&nbsp; <b>' + escHtml(r[1]) + '</b>'; });
+    return lines.join('<br>');
+  }
+
+  // --- Render step ---
+  function render() {
+    steps.forEach(function (s) {
+      var active = parseInt(s.dataset.step, 10) === step;
+      s.classList.toggle('is-active', active);
+    });
+    if (bar) bar.style.width = (step / 3 * 100) + '%';
+    if (countEl) countEl.textContent = 'Step 0' + step + ' / 03';
+    var prog = document.querySelector('.cf-progress');
+    if (prog) prog.setAttribute('aria-valuenow', step);
+    back.hidden = step === 1;
+    next.textContent = step === 3 ? 'Send the brief \u2192' : 'Continue \u2192';
+    if (step === 3) echo.innerHTML = summary();
+  }
+
+  // Focus the heading of the current step (accessibility)
+  function focusStep(n) {
+    var h = document.getElementById('cf-q' + n);
+    if (h) {
+      h.focus();
+      // Scroll into view on mobile
+      h.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+
+  function advance() {
+    step++;
+    render();
+    focusStep(step);
+  }
+
+  // --- Choice rows (step 1): radio change → visual + auto-advance ---
+  document.querySelectorAll('label.cf-choice').forEach(function (lbl) {
+    lbl.addEventListener('change', function () {
+      document.querySelectorAll('label.cf-choice').forEach(function (o) {
+        o.classList.remove('is-selected');
+      });
+      lbl.classList.add('is-selected');
+      // Brief delay so the user sees the selection before advancing
+      setTimeout(function () { advance(); }, 180);
+    });
+  });
+
+  // --- Chips (step 2): radio change → visual ---
+  document.querySelectorAll('.cf-chips').forEach(function (g) {
+    g.addEventListener('change', function (e) {
+      if (!e.target || e.target.type !== 'radio') return;
+      var chip = e.target.closest('label.cf-chip');
+      g.querySelectorAll('label.cf-chip').forEach(function (c) { c.classList.remove('is-selected'); });
+      if (chip) chip.classList.add('is-selected');
+    });
+  });
+
+  // --- Character counter (textarea) ---
+  var ta    = document.getElementById('cf-detail');
+  var chars = document.getElementById('cf-chars');
+  ta.addEventListener('input', function () {
+    chars.textContent = ta.value.length + ' / 600';
+  });
+
+  // --- Validation (step 3 only) ---
+  function validate() {
+    var nameEl    = document.getElementById('cf-name');
+    var emailEl   = document.getElementById('cf-email');
+    var nameField  = document.getElementById('cf-field-name');
+    var emailField = document.getElementById('cf-field-email');
+    var ok = true;
+
+    nameField.classList.remove('has-error');
+    emailField.classList.remove('has-error');
+    nameEl.removeAttribute('aria-invalid');
+    emailEl.removeAttribute('aria-invalid');
+
+    if (!nameEl.value.trim()) {
+      nameField.classList.add('has-error');
+      nameEl.setAttribute('aria-invalid', 'true');
+      ok = false;
+    }
+    var emailVal = emailEl.value.trim();
+    if (!emailVal || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+      emailField.classList.add('has-error');
+      emailEl.setAttribute('aria-invalid', 'true');
+      ok = false;
+    }
+    if (!ok) {
+      var first = form.querySelector('.has-error .cf-input');
+      if (first) first.focus();
+    }
+    return ok;
+  }
+
+  // --- Success state ---
+  function showSuccess() {
+    var s = summary();
+    var html = '<p class="cf-done-h ed-serif">Brief <em>received.</em></p>'
+      + '<p class="cf-q-sub" style="margin-top:14px">We\'ve got it. Here\'s exactly what happens next — the same steps on the right, with your clock started.</p>'
+      + (s ? '<div class="cf-echo ed-mono" style="margin-top:20px">' + s + '</div>' : '')
+      + '<p class="cf-note" style="margin-top:20px">Nothing lands in a drip sequence. If you\'d rather talk first, reply to the email you\'re about to get.</p>';
+    done.innerHTML = html;
+    form.style.display = 'none';
+    if (note) note.style.display = 'none';
+    done.classList.add('is-active');
+    done.focus();
+  }
+
+  // --- Next / Submit button ---
+  next.addEventListener('click', function () {
+    if (step < 3) { advance(); return; }
+
+    // Validate before submit
+    if (!validate()) return;
+
+    // Honeypot check
+    var hp = form.querySelector('input[name="_gotcha"]');
+    if (hp && hp.value !== '') return;
+
+    // Minimum time check (3 s) — cheap bot filter
+    var ts = parseInt(document.getElementById('cf-timestamp').value || '0', 10);
+    if (ts > 0 && (Date.now() - ts) < 3000) return;
+
+    if (!endpoint) {
+      // Demo mode — nothing transmitted
+      showSuccess();
+      return;
+    }
+
+    // Live mode — POST to configured endpoint
+    next.disabled = true;
+    next.textContent = 'Sending\u2026';
+    fetch(endpoint, {
+      method: 'POST',
+      body: new URLSearchParams(new FormData(form)),
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+    })
+    .then(function () { showSuccess(); })
+    .catch(function () {
+      next.disabled = false;
+      next.textContent = 'Send the brief \u2192';
+      var err = document.getElementById('cf-submit-err');
+      if (!err) {
+        err = document.createElement('p');
+        err.id = 'cf-submit-err';
+        err.className = 'cf-note';
+        err.style.color = '#c0392b';
+        err.textContent = 'Something went wrong. Please email us directly at admin@vardarasoftware.com.';
+        next.insertAdjacentElement('afterend', err);
+      }
+    });
+  });
+
+  // --- Back button ---
+  back.addEventListener('click', function () {
+    if (step > 1) { step--; render(); focusStep(step); }
+  });
+
+  render();
+})();
+</script>

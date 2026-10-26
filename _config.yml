@@ -13,6 +13,19 @@ booking:
   label: "Currently booking"
   value: "Q1 2027 — 2 squads open"
 
+# Contact page — submission endpoint.
+# Leave endpoint empty for demo mode (validates client-side, nothing is transmitted).
+# Set to a real POST URL (Formspree, n8n webhook, or a new Zoho project-enquiry form) to go live.
+# IMPORTANT: Do NOT reuse the LinkedIn/recruiting Zoho form tokens (webform922561000000459009).
+# Deciding the real destination is a board decision — see VAR-11.
+contact:
+  endpoint: ""
+  response_times:
+    initial_read: "Within 1 business day"
+    call_schedule: "Your calendar, your timezone"
+    shaping_note: "Within 3 working days"
+    weekly_cadence: "Weekly from there"
+
 permalink: "/blog/:title/"
 
 plugins:

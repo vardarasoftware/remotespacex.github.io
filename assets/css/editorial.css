@@ -989,3 +989,374 @@ html.dark .ed-theme-toggle .icon-moon { display: block; }
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ============================================================
+   cf-* — Contact / "Start a project" page  (VAR-11)
+   Uses editorial.css tokens only. No new colours, no new fonts.
+   No cards, no shadows, no blur. Structure = 1px hairlines only.
+   ============================================================ */
+
+/* UTILITY — visually hidden but screen-reader accessible */
+.cf-sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- HERO ---------- */
+.cf-hero { padding: 92px 0 56px; }
+.cf-hero-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 64px;
+  align-items: end;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--rule);
+}
+.cf-h1 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(42px, 7vw, 86px);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  margin-top: 18px;
+}
+.cf-h1 em { font-style: italic; color: var(--accent); }
+.cf-kicker {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+.cf-hero-aside p { color: var(--mute); font-size: 16.5px; line-height: 1.62; }
+.cf-hero-aside p + p { margin-top: 14px; }
+.cf-side-meta {
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+  color: var(--mute);
+  line-height: 1.8;
+}
+.cf-side-meta span { color: var(--ink); }
+
+/* ---------- MAIN GRID ---------- */
+.cf-main { display: grid; grid-template-columns: 1.45fr 1fr; gap: 0; }
+.cf-form-col { padding: 48px 64px 72px 0; border-right: 1px solid var(--rule); }
+.cf-rail-col { padding: 48px 0 72px 56px; }
+
+/* ---------- FORM CHROME (step counter + progress bar) ---------- */
+.cf-form-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+.cf-form-head h2 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-weight: 400;
+  font-size: 30px;
+}
+/* Step counter + progress bar: hidden without JS, shown by html:not(.no-js) */
+.cf-step-count { display: none; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: var(--mute); letter-spacing: 0.06em; }
+.cf-progress { display: none; height: 2px; background: var(--rule); margin-bottom: 36px; }
+.cf-progress i { display: block; height: 2px; background: var(--accent); width: 33.33%; transition: width .35s ease; }
+html:not(.no-js) .cf-step-count { display: inline; }
+html:not(.no-js) .cf-progress { display: block; }
+
+/* ---------- STEP SECTIONS — progressive enhancement ---------- */
+/* No-JS default: all steps visible and stacked */
+.cf-step { display: block; }
+.cf-step + .cf-step { margin-top: 44px; padding-top: 44px; border-top: 1px solid var(--rule); }
+/* With JS: single-step mode */
+html:not(.no-js) .cf-step { display: none; }
+html:not(.no-js) .cf-step.is-active { display: block; }
+html:not(.no-js) .cf-step + .cf-step { margin-top: 0; padding-top: 0; border-top: none; }
+
+.cf-q {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 1.25;
+  margin-bottom: 4px;
+}
+.cf-q-sub { color: var(--mute); font-size: 14.5px; margin-bottom: 26px; }
+
+/* ---------- BIG HAIRLINE CHOICE ROWS (step 1) ---------- */
+.cf-choices { border-top: 1px solid var(--rule); }
+label.cf-choice {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 44px 1fr 24px;
+  align-items: start;
+  gap: 18px;
+  padding: 22px 4px;
+  border-bottom: 1px solid var(--rule);
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  transition: padding-left .18s ease, box-shadow .18s ease;
+}
+label.cf-choice:hover,
+label.cf-choice:focus-within { padding-left: 14px; }
+label.cf-choice:focus-within { box-shadow: inset 2px 0 0 var(--accent); outline: none; }
+.cf-choice-num { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: var(--mute); padding-top: 7px; transition: color .18s ease; }
+.cf-choice-title {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-weight: 400;
+  font-size: 23px;
+  line-height: 1.25;
+  display: block;
+}
+.cf-choice-desc { color: var(--mute); font-size: 14.5px; margin-top: 4px; max-width: 46ch; }
+.cf-choice-arrow { color: var(--mute); padding-top: 6px; transition: transform .18s ease, color .18s ease; }
+label.cf-choice:hover .cf-choice-arrow,
+label.cf-choice:focus-within .cf-choice-arrow { transform: translateX(5px); color: var(--accent); }
+/* Selected state: :has() for modern no-JS, .is-selected added by JS as fallback */
+label.cf-choice:has(input:checked) .cf-choice-num,
+label.cf-choice:has(input:checked) .cf-choice-arrow,
+label.cf-choice.is-selected .cf-choice-num,
+label.cf-choice.is-selected .cf-choice-arrow { color: var(--accent); }
+label.cf-choice:has(input:checked),
+label.cf-choice.is-selected { box-shadow: inset 2px 0 0 var(--accent); padding-left: 14px; }
+
+/* ---------- CHIP GROUPS (step 2) ---------- */
+.cf-field { margin-bottom: 30px; }
+.cf-label {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mute);
+  margin-bottom: 12px;
+}
+.cf-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+label.cf-chip {
+  display: inline-flex;
+  align-items: center;
+  font: inherit;
+  font-size: 14px;
+  padding: 9px 16px;
+  min-height: 44px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color .15s ease, color .15s ease, box-shadow .15s ease;
+}
+label.cf-chip:hover { border-color: var(--ink); }
+label.cf-chip:has(input:checked),
+label.cf-chip.is-selected {
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+label.cf-chip:focus-within { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* ---------- TEXT INPUTS ---------- */
+.cf-input, .cf-textarea {
+  width: 100%;
+  font: inherit;
+  font-size: 16px;
+  color: var(--ink);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--rule);
+  padding: 12px 2px;
+  min-height: 48px;
+  border-radius: 0;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.cf-input::placeholder, .cf-textarea::placeholder { color: var(--mute); opacity: .7; }
+.cf-input:focus, .cf-textarea:focus { outline: none; border-bottom-color: var(--accent); }
+.cf-textarea { min-height: 128px; resize: vertical; line-height: 1.6; }
+.cf-count { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mute); margin-top: 8px; text-align: right; }
+.cf-two { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+
+/* Validation error state */
+.cf-error {
+  display: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: #c0392b;
+  margin-top: 6px;
+}
+.cf-field.has-error .cf-input { border-bottom-color: #c0392b; }
+.cf-field.has-error .cf-error { display: block; }
+html.dark .cf-error { color: #e57373; }
+html.dark .cf-field.has-error .cf-input { border-bottom-color: #e57373; }
+
+/* ---------- ECHO SUMMARY ---------- */
+.cf-echo {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11.5px;
+  line-height: 1.9;
+  color: var(--mute);
+  border-top: 1px solid var(--rule);
+  padding-top: 16px;
+  margin-top: 4px;
+  margin-bottom: 28px;
+}
+.cf-echo b { color: var(--ink); font-weight: 400; }
+
+/* ---------- ACTIONS — JS navigation buttons ---------- */
+/* Hidden without JS; shown when JS removes .no-js from <html> */
+.cf-actions { display: none; margin-top: 36px; align-items: center; gap: 24px; }
+html:not(.no-js) .cf-actions { display: flex; }
+
+/* No-JS submit: visible without JS, hidden with JS */
+.cf-noscript-submit { margin-top: 36px; }
+html:not(.no-js) .cf-noscript-submit { display: none; }
+
+.cf-next {
+  font: inherit;
+  font-size: 15px;
+  padding: 15px 30px;
+  min-height: 48px;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  cursor: pointer;
+  transition: opacity .15s ease;
+}
+.cf-next:hover { opacity: .84; }
+.cf-next:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.cf-next:disabled { opacity: .5; cursor: not-allowed; }
+.cf-back {
+  font: inherit;
+  font-size: 14px;
+  color: var(--mute);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  min-height: 44px;
+  padding: 0 2px;
+  border-bottom: 1px solid transparent;
+}
+.cf-back:hover { color: var(--ink); border-bottom-color: var(--rule); }
+.cf-back:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.cf-note { font-size: 13px; color: var(--mute); margin-top: 18px; }
+
+/* ---------- SUCCESS STATE ---------- */
+.cf-done { display: none; }
+.cf-done.is-active { display: block; padding-top: 8px; }
+.cf-done-h {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 1.1;
+  margin-bottom: 14px;
+}
+.cf-done-h em { font-style: italic; color: var(--accent); }
+
+/* ---------- RIGHT RAIL ---------- */
+.cf-rail-sticky { position: sticky; top: 104px; }
+.cf-rail-head {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mute);
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--rule);
+}
+.cf-next-step {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.cf-next-step > span {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11.5px;
+  color: var(--accent);
+  padding-top: 4px;
+}
+.cf-next-step h3 { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: 19px; }
+.cf-next-step p { color: var(--mute); font-size: 14px; margin-top: 3px; }
+.cf-next-step small {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: .06em;
+  color: var(--mute);
+  display: block;
+  margin-top: 7px;
+  text-transform: uppercase;
+}
+.cf-rail-foot { padding-top: 26px; }
+.cf-rail-foot p { font-size: 14px; color: var(--mute); }
+.cf-rail-foot a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule); }
+.cf-rail-foot a:hover { border-bottom-color: var(--accent); color: var(--accent); }
+
+/* ---------- PROCESS SECTION ---------- */
+.cf-process { padding: 0 0 96px; }
+.cf-process-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 44px 0 26px;
+  border-top: 1px solid var(--rule);
+}
+.cf-process-head h2 { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: 30px; }
+.cf-process-head span { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--mute); }
+.cf-proc-rail { display: grid; grid-template-columns: repeat(6, 1fr); border-top: 1px solid var(--rule); }
+.cf-proc-item { padding: 22px 20px 26px 0; border-right: 1px solid var(--rule); }
+.cf-proc-item:last-child { border-right: 0; }
+.cf-proc-item b { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .1em; color: var(--accent); font-weight: 400; display: block; margin-bottom: 9px; }
+.cf-proc-item h3 { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: 19px; margin-bottom: 5px; }
+.cf-proc-item p { font-size: 13.5px; color: var(--mute); line-height: 1.55; }
+
+/* ---------- HONEYPOT (spam) ---------- */
+.cf-hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px; height: 1px;
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* ============================================================
+   RESPONSIVE — deliberate layouts, not shrink-to-fit
+   ============================================================ */
+@media (max-width: 1024px) {
+  .cf-hero-grid { grid-template-columns: 1fr; gap: 34px; align-items: start; }
+  .cf-main { grid-template-columns: 1fr; }
+  .cf-form-col { padding: 40px 0 48px; border-right: 0; border-bottom: 1px solid var(--rule); }
+  .cf-rail-col { padding: 40px 0 64px; }
+  .cf-rail-sticky { position: static; }
+  .cf-proc-rail { grid-template-columns: repeat(3, 1fr); }
+  .cf-proc-item:nth-child(3n) { border-right: 0; }
+  .cf-proc-item:nth-child(-n+3) { border-bottom: 1px solid var(--rule); }
+}
+@media (max-width: 680px) {
+  .cf-hero { padding: 64px 0 36px; }
+  .cf-two { grid-template-columns: 1fr; gap: 0; }
+  label.cf-choice { grid-template-columns: 34px 1fr; gap: 14px; padding: 20px 2px; }
+  .cf-choice-arrow { display: none; }
+  .cf-proc-rail { grid-template-columns: 1fr; }
+  .cf-proc-item { border-right: 0; border-bottom: 1px solid var(--rule); padding: 18px 0 20px; }
+  .cf-proc-item:last-child { border-bottom: 0; }
+  html:not(.no-js) .cf-actions { flex-direction: column-reverse; align-items: stretch; gap: 14px; }
+  .cf-next { width: 100%; text-align: center; }
+  .cf-back { text-align: center; width: 100%; }
+  .cf-process-head { flex-direction: column; gap: 6px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cf-progress i, label.cf-choice, .cf-choice-arrow, label.cf-chip { transition: none; }
+}
