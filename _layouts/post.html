@@ -1,50 +1,52 @@
 ---
-layout: default
+layout: editorial
 ---
 
+{%- assign tags = page.tags | default: "" -%}
+{%- assign date_fmt = site.minima.date_format | default: "%b %-d, %Y" -%}
 
-<article class="font-sans prose-page relative py-24 md:py-28 overflow-hidden" itemscope itemtype="http://schema.org/BlogPosting">
+<!-- POST HERO -->
+<section class="pt-hero" aria-labelledby="pt-heading">
+  <div class="ed-wrap">
 
-  <header class="relative px-4 sm:px-6 lg:px-8">
-    <div class="text-lg max-w-prose mx-auto mb-4">
-      <h1
-        class="ink-heading mt-2 mb-2 text-3xl text-center-DIS leading-8 font-extrabold tracking-tight-DIS sm:text-4xl sm:leading-10"
-        itemprop="name headline">
-        {{ page.title | escape }}</h1>
-    </div>
-    <p class="max-w-prose mx-auto mb-2 text-lg uppercase text-gray-500"><span class="font-bold tracking-wide">
-      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-      <time class="dt-published text-xs" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {{ page.date | date: date_format }}
-      </time>
-      {%- if page.modified_date -%}
-      ~
-      {%- assign mdate = page.modified_date | date_to_xmlschema -%}
-      <time class="dt-modified text-sm" datetime="{{ mdate }}" itemprop="dateModified">
-        {{ mdate | date: date_format }}
-      </time>
+    <!-- Kicker: tags + date -->
+    <p class="pt-kicker">
+      {%- if tags.size > 0 -%}
+        {%- for tag in tags -%}
+          <span>{{ tag }}</span>
+          {%- unless forloop.last %}<span class="pt-kicker-sep">/</span>{% endunless %}
+        {%- endfor -%}
+        <span class="pt-kicker-sep">&mdash;</span>
       {%- endif -%}
-      {%- if page.author -%}
-      • {% for author in page.author %}
-      <span itemprop="author text-sm" itemscope itemtype="http://schema.org/Person">
-        <span class="p-author h-card" itemprop="name">{{ author }}</span></span>
-      {%- if forloop.last == false %}, {% endif -%}
-      {% endfor %}
-      {%- endif -%}
-    </span></p>
-    <!-- 
-      Please sign up at https://www.soopr.co to personalize share and reaction buttons
-    -->
-    <div class="max-w-prose text-lg mx-auto mt-4 mb-8 soopr-btn soopr-btn-def" style="min-height: 36px;"></div>
-  </header>
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: date_fmt }}</time>
+    </p>
 
-  <div class="prose prose-lg mx-auto" style="color: var(--ink-2);" itemprop="articleBody">
-    {{ content }}
+    <!-- Single h1 — layout owns it, markdown must NOT repeat it -->
+    <h1 id="pt-heading" class="pt-h1">{{ page.title | escape }}</h1>
+
+    {%- if page.author -%}
+    <p class="pt-meta">
+      <span>By</span>
+      <span class="pt-meta-author">{{ page.author | escape }}</span>
+    </p>
+    {%- endif -%}
+
+    {%- if page.description -%}
+    <p class="pt-description">{{ page.description | escape }}</p>
+    {%- endif -%}
+
   </div>
+</section>
 
-  {%- if site.disqus.shortname -%}
-  {%- include disqus_comments.html -%}
-  {%- endif -%}
+<!-- POST BODY -->
+<div class="ed-wrap">
+  <article class="pt-body" aria-label="{{ page.title | escape }}">
+    {{ content }}
+  </article>
 
-  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
-</article>
+  <!-- Back link -->
+  <a href="{{ '/blog/' | relative_url }}" class="pt-back">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    All writing
+  </a>
+</div>

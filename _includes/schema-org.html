@@ -1,0 +1,88 @@
+{% comment %}
+  schema-org.html — JSON-LD structured data (VAR-14)
+  Included in editorial.html <head>.
+  Emits:
+    • Organization + WebSite on every editorial page
+    • Article / BlogPosting on posts (detected by page.layout == "post")
+{% endcomment %}
+
+{%- assign site_url = site.url | append: site.baseurl -%}
+
+<!-- JSON-LD: Organization + WebSite (site-wide) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "{{ site_url }}/#organization",
+      "name": "Vardara Software",
+      "url": "{{ site_url }}/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ '/assets/img/favicons/apple-touch-icon.png' | absolute_url }}"
+      },
+      "sameAs": [
+        "https://github.com/remotespacex",
+        "https://www.linkedin.com/company/vardara-software/"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "admin@vardarasoftware.com",
+        "contactType": "customer support"
+      },
+      "description": "Next-generation software development lab. Senior engineers running an AI harness and a software factory across the whole build."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ site_url }}/#website",
+      "url": "{{ site_url }}/",
+      "name": "{{ site.title | escape }}",
+      "description": "Next-generation software development lab. Senior engineers running an AI harness and a software factory across the whole build.",
+      "publisher": {
+        "@id": "{{ site_url }}/#organization"
+      }
+    }
+  ]
+}
+</script>
+
+{%- if page.layout == "post" -%}
+{%- assign post_description = page.description | default: page.excerpt | strip_html | normalize_whitespace | truncate: 160 -%}
+{%- assign post_image = page.image | default: '/assets/img/twitter_card.png' -%}
+<!-- JSON-LD: Article / BlogPosting -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{ page.url | absolute_url }}#article",
+  "headline": {{ page.title | jsonify }},
+  "description": {{ post_description | jsonify }},
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.modified_date | default: page.date | date_to_xmlschema }}",
+  "url": "{{ page.url | absolute_url }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ page.url | absolute_url }}"
+  },
+  "author": {
+    "@type": "Person",
+    "name": {{ page.author | default: "Vardara Software" | jsonify }},
+    "url": "{{ site_url }}/"
+  },
+  "publisher": {
+    "@id": "{{ site_url }}/#organization"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "{{ post_image | absolute_url }}"
+  },
+  "isPartOf": {
+    "@type": "Blog",
+    "@id": "{{ '/blog/' | absolute_url }}#blog",
+    "name": "Vardara Software — Writing",
+    "url": "{{ '/blog/' | absolute_url }}"
+  }
+}
+</script>
+{%- endif -%}

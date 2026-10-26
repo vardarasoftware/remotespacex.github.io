@@ -33,6 +33,7 @@ plugins:
   - jekyll-soopr-seo-tag
   - jekyll-sitemap
   - jekyll-minifier
+  - jekyll-redirect-from
 
 css_dir: "assets/css"
 
@@ -41,7 +42,7 @@ highlighter: rouge
 collections:
   posts:
     output: true
-    permalink: "/blog/:title"
+    permalink: "/blog/:title/"
   pages:
     output: true
     permalink: "/:title"
