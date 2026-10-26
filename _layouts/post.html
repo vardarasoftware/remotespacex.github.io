@@ -31,6 +31,12 @@ layout: editorial
     </p>
     {%- endif -%}
 
+    {%- if page.last_modified_at -%}
+    <p class="pt-updated">
+      <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">Updated {{ page.last_modified_at | date: "%-d %B %Y" }}</time>
+    </p>
+    {%- endif -%}
+
     {%- if page.description -%}
     <p class="pt-description">{{ page.description | escape }}</p>
     {%- endif -%}
