@@ -3,7 +3,6 @@ layout: post
 title: "Life at Vardara Software: Innovation, Collaboration, and Continuous Growth"
 description: "Inside Vardara Software — how we run an AI-augmented engineering team, why collaboration is the real driver of output, and what it looks like to build software here day-to-day."
 date: 2023-01-11
-author: Vardara Software
 tags:
   - Culture
   - Engineering

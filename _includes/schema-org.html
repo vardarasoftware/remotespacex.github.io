@@ -102,10 +102,16 @@
     "@type": "WebPage",
     "@id": "{{ page.url | absolute_url }}"
   },
+  {%- if page.author -%}
   "author": {
     "@type": "Person",
-    "name": {{ page.author | default: "Vardara Software" | jsonify }}
+    "name": {{ page.author | jsonify }}
   },
+  {%- else -%}
+  "author": {
+    "@id": "{{ site_url }}/#organization"
+  },
+  {%- endif -%}
   "publisher": {
     "@id": "{{ site_url }}/#organization"
   },
