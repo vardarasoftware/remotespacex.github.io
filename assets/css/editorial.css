@@ -1511,6 +1511,16 @@ html:not(.no-js) .cf-noscript-submit { display: none; }
 .pt-meta time { color: var(--ink); }
 .pt-meta-author { color: var(--ink); }
 
+/* "Updated …" disclosure line — visible to readers, not only crawlers */
+.pt-updated {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--mute);
+  margin-top: 6px;
+}
+
 .pt-description {
   margin-top: 28px;
   font-size: 18px;

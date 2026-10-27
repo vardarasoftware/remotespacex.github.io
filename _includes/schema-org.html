@@ -59,7 +59,7 @@
   "headline": {{ page.title | jsonify }},
   "description": {{ post_description | jsonify }},
   "datePublished": "{{ page.date | date_to_xmlschema }}",
-  "dateModified": "{{ page.modified_date | default: page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
   "url": "{{ page.url | absolute_url }}",
   "mainEntityOfPage": {
     "@type": "WebPage",
@@ -67,8 +67,7 @@
   },
   "author": {
     "@type": "Person",
-    "name": {{ page.author | default: "Vardara Software" | jsonify }},
-    "url": "{{ site_url }}/"
+    "name": {{ page.author | default: "Vardara Software" | jsonify }}
   },
   "publisher": {
     "@id": "{{ site_url }}/#organization"
