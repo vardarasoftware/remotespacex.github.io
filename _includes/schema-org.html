@@ -1,8 +1,9 @@
 {% comment %}
-  schema-org.html — JSON-LD structured data (VAR-14)
+  schema-org.html — JSON-LD structured data (VAR-14, VAR-22)
   Included in editorial.html <head>.
   Emits:
     • Organization + WebSite on every editorial page
+    • AboutPage + Person on /about (detected by page.schema_about == true)
     • Article / BlogPosting on posts (detected by page.layout == "post")
 {% endcomment %}
 
@@ -23,15 +24,18 @@
         "url": "{{ '/assets/img/favicons/apple-touch-icon.png' | absolute_url }}"
       },
       "sameAs": [
-        "https://github.com/remotespacex",
-        "https://www.linkedin.com/company/vardara-software/"
+        "https://github.com/vardarasoftware",
+        "https://in.linkedin.com/company/vardara-software"
       ],
       "contactPoint": {
         "@type": "ContactPoint",
         "email": "admin@vardarasoftware.com",
         "contactType": "customer support"
       },
-      "description": "Next-generation software development lab. Senior engineers running an AI harness and a software factory across the whole build."
+      "description": "Next-generation software development lab. Senior engineers running an AI harness and a software factory across the whole build.",
+      "employee": {
+        "@id": "{{ '/about/#mahendra-singh' | absolute_url }}"
+      }
     },
     {
       "@type": "WebSite",
@@ -46,6 +50,39 @@
   ]
 }
 </script>
+
+{%- if page.schema_about -%}
+<!-- JSON-LD: AboutPage + Person (/about) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": "{{ page.url | absolute_url }}#webpage",
+      "url": "{{ page.url | absolute_url }}",
+      "name": "About — Vardara Software",
+      "description": {{ page.description | jsonify }},
+      "isPartOf": {
+        "@id": "{{ site_url }}/#website"
+      },
+      "about": {
+        "@id": "{{ site_url }}/#organization"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "{{ '/about/#mahendra-singh' | absolute_url }}",
+      "name": "Mahendra Singh",
+      "jobTitle": "Senior software architect",
+      "worksFor": {
+        "@id": "{{ site_url }}/#organization"
+      }
+    }
+  ]
+}
+</script>
+{%- endif -%}
 
 {%- if page.layout == "post" -%}
 {%- assign post_description = page.description | default: page.excerpt | strip_html | normalize_whitespace | truncate: 160 -%}
