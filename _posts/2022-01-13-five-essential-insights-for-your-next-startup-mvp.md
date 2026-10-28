@@ -3,7 +3,6 @@ layout: post
 title: "Five Essential Insights for Your Next Startup MVP"
 description: "Before you write a line of code: define the problem precisely, keep scope lean, design for real users, iterate fast, and instrument everything. Five principles that separate focused MVPs from feature sprawl."
 date: 2022-01-13
-author: Vardara Software
 tags:
   - Product
   - Engineering
